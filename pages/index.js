@@ -1,65 +1,73 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Link from "next/link";
 
-export default function Home() {
+import fs from "fs";
+import matter from "gray-matter";
+
+import Layout from "../components/layout";
+
+export default function Home({ posts }) {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+    <Layout>
+      <div className="intro mb-8">
+        <div className="text-3xl font-bold">
+          Introduction
         </div>
-      </main>
+        <div className="pl-4 mt-4">
+          Hi, I'm Damien.
+        </div>
+      </div>
+      <div className="text-3xl font-bold">
+        Recent blog articles
+      </div>
+      <div className="pl-4">
+        {posts.sort((p1, p2) => new Date(p2.date) - new Date(p1.date)).map(({ frontmatter: { title, description, date }, slug }) => (
+          <article key={slug}>
+            <header>
+              <h3 className="mb-0 mt-4">
+                <Link href={"/post/[slug]"} as={`/post/${slug}`}>
+                  <a className="text-2xl font-semibold text-indigo-600 no-underline">
+                    {title}
+                  </a>
+                </Link>
+              </h3>
+              <span className="mb-6 text-xs">written on {date}</span>
+            </header>
+          </article>
+        ))}
+      </div>
+    </Layout>
+  );
+}
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+export async function getStaticProps() {
+  const files = fs.readdirSync(`${process.cwd()}/content/posts`);
+
+  const posts = files.map((filename) => {
+    const markdownWithMetadata = fs
+      .readFileSync(`content/posts/${filename}`)
+      .toString();
+
+    const { data } = matter(markdownWithMetadata);
+
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    const formattedDate = data.date.toLocaleDateString("en-US", options);
+
+    const frontmatter = {
+      ...data,
+      date: formattedDate,
+    };
+
+    return {
+      slug: filename.replace(".md", ""),
+      date: data.date.toISOString(),
+      frontmatter,
+    };
+  });
+
+  return {
+    props: {
+      posts,
+    },
+  };
 }

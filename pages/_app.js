@@ -1,7 +1,15 @@
-import '../styles/globals.css'
+import Head from "next/head";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+import "../styles/tailwind.css";
+import "typeface-lato";
+
+export default function MyApp({ Component, pageProps }) {
+  return(
+    <>
+      <Head>
+        <title>Damien Gonot</title>
+      </Head>
+      <Component {...pageProps} />
+    </>
+  )
 }
-
-export default MyApp

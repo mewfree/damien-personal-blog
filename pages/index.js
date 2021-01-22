@@ -35,13 +35,13 @@ export default function Home({ posts }) {
           </article>
         ))}
       </div>
-    <div className="pl-4 mt-6">
-      <Link href="/blog">
-        <a className="text-2xl font-semibold text-indigo-600 no-underline hover:text-black">
-          See all articles
-        </a>
-      </Link>
-    </div>
+      <div className="pl-4 mt-6">
+        <Link href="/blog">
+          <a className="text-2xl font-semibold text-indigo-600 no-underline hover:text-black">
+            See all articles
+          </a>
+        </Link>
+      </div>
     </Layout>
   );
 }

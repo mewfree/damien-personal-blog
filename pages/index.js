@@ -25,7 +25,7 @@ export default function Home({ posts }) {
             <header>
               <h3 className="mb-0 mt-4">
                 <Link href={"/blog/[slug]"} as={`/blog/${slug}`}>
-                  <a className="text-2xl font-semibold text-indigo-600 no-underline">
+                  <a className="text-2xl font-semibold text-indigo-600 no-underline hover:text-black">
                     {title}
                   </a>
                 </Link>
@@ -35,6 +35,11 @@ export default function Home({ posts }) {
           </article>
         ))}
       </div>
+    <div className="pl-4 mt-6">
+      <a className="text-2xl font-semibold text-indigo-600 no-underline hover:text-black">
+        <Link href="/blog">See all articles</Link>
+      </a>
+    </div>
     </Layout>
   );
 }

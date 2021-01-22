@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -18,6 +19,9 @@ const CodeBlock = ({ language, value }) => {
 export default function Post({ content, frontmatter }) {
   return (
     <Layout>
+      <Head>
+        <title>{frontmatter.title} - Damien Gonot</title>
+      </Head>
       <div className="mb-8">
         <h1 className="text-4xl font-bold text-center">{frontmatter.title}</h1>
         <div className="text-center">written on {frontmatter.date}</div>

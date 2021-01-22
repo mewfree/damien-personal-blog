@@ -25,13 +25,13 @@ If your Google Analytics doesn't set up any cookie, then you don't have to show 
 Go ahead to Google Tag Manager, select your account.
 
 You should see this:
-![Select Analytics in GTM](gtm_analytics.png)
+![Select Analytics in GTM](/images/gtm_analytics.png)
 
 Edit Analytics settings by clicking on the card and set field name `storeGac` to value `false`
-![Setting storeGac to false](gtm_storeGac.png)
+![Setting storeGac to false](/images/gtm_storeGac.png)
 
 As you can see, no cookies are set on new visits to [damiengonot.com](https://www.damiengonot.com).
-![No More Cookies](no_more_cookies.png)
+![No More Cookies](/images/no_more_cookies.png)
 
 # Any drawbacks?
 You won't be able to measure recurring visitors.

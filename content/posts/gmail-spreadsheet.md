@@ -12,7 +12,7 @@ Whether you're a small business owner looking to send updates about your product
 # Spreadsheet Setup
 [Here is a sample sheet I'll use as an example](https://docs.google.com/spreadsheets/d/1Jg9fIoUMBI75eDGbEJGevcU2HHH59hTlK-v0k_A8Al4/edit?usp=sharing).
 
-![Spreadsheet Sample](spreadsheet_sample.png)
+![Spreadsheet Sample](/images/spreadsheet_sample.png)
 
 Feel free to duplicate it by clicking on __File > Make a copy__.
 
@@ -69,7 +69,7 @@ Be warned that you'll probably be prompted to authorize your own script to read 
 
 Head over to the [drafts section of your Gmail account](https://mail.google.com/mail/u/0/#drafts):
 
-![Gmail Drafts](gmail_drafts.png)
+![Gmail Drafts](/images/gmail_drafts.png)
 
 Congrats! You've automatically generated email drafts.
 

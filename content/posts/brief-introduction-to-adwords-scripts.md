@@ -12,22 +12,22 @@ Let's create our first Google Ads script now!
 ## How to access it?
 ### Using the new Google Ads interface
 The easiest way is to take advantage of Google Ads' new shortcut feature: by typing <kbd>gt</kbd> anywhere in the interface. After the search prompt appears, simply search for "scripts" and press <kbd>Enter</kbd>.
-![Result of gt script](gt_script.png)
+![Result of gt script](/images/gt_script.png)
 
 Or going through the actual interface menus, click on the wrench icon in the top-right corner and you'll find "Scripts" in the "Bulk actions" section.
-![Actual interface](full_interface_scripts.png)
+![Actual interface](/images/full_interface_scripts.png)
 
 ### Using the old Google Ads interface
 If you're not using the new Google Ads interface, you can find Scripts in the left-hand side menu under the "Bulk operations" section.
-![Old interface](old_interface_scripts.png)
+![Old interface](/images/old_interface_scripts.png)
 
 I'll use the newer Google Ads interface out of convenience for the rest of the tutorial.
 
 # Our first Google Ads script
 If you've never used Google Ads scripts before, your list of scripts should be empty. You can create a first one by clicking on the big circled "+" button.
-![Circled plus button](creating_first_script.png)
+![Circled plus button](/images/creating_first_script.png)
 This is what you should see:
-![Empty AdWords Script](empty_adwords_script.png)
+![Empty AdWords Script](/images/empty_adwords_script.png)
 You can name it however you want. I will name mine "Our first AdWords Script". An asterisk (\*) before the script name indicates that there are unsaved changes.
 
 You can ignore the "Advanced APIs" button for now as it is used only to connect to other Google Services like BigQuery etc...
@@ -53,7 +53,7 @@ function main() {
 You can go ahead and press the Preview button. It will automatically save your script and run it in preview mode. When scripts are run in "Preview", they don't actually run against your Google Ads account and don't make any changes yet. Only when you press the Run button your scripts will modify the actual Google Ads account. For now, we'll only use Preview.
 
 You'll see that the Changes section stays empty. That's because we haven't done any actions on our Google Ads entities yet and have only played with the Logs. So click on the Logs section and this is what you should see:
-![Hello world first result](hello_world_first_result.png)
+![Hello world first result](/images/hello_world_first_result.png)
 
 __Congrats! You've run your first Google Ads script!__
 

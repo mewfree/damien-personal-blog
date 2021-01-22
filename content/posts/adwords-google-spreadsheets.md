@@ -29,10 +29,10 @@ function main() {
 ```
 
 If you run or preview this in Google Ads scripts, you'll notice we have to give additional permissions so that the script is able to run:
-![New permissions](scripts_permissions.png)
+![New permissions](/images/scripts_permissions.png)
 
 After this is done, you should be able to see your spreadsheet's name in the logs.
-![Spreadsheet name log](spreadsheet_name_log.png)
+![Spreadsheet name log](/images/spreadsheet_name_log.png)
 
 ## Selecting a sheet
 Spreadsheets can hold multiples sheets. We can select a sheet either by its name (`javascript›spreadsheet.getSheetByName('sheet_name')`) or its position (`javascript›spreadsheet.getSheets()[0]` for the first sheet, `javascript›spreadsheet.getSheets()[1]` for the second sheet...).
@@ -212,10 +212,10 @@ I'm using the length of the array and the length of the first element of the arr
 Just a warning that previewing the script will actually write the data in the spreadsheet! So be careful.
 
 ## Spreadsheet Result
-![write sheet result](write_sheet_result.png)
+![write sheet result](/images/write_sheet_result.png)
 
 This is really useful if you're interested in having your own custom dashboard right in Google Spreadsheets. If you want to have this data updated automatically every day, I would suggest turning on daily updates through Google Ads scripts' frequency feature available on the Google Ads scripts homepage:
-![daily frequency](daily_frequency.png)
+![daily frequency](/images/daily_frequency.png)
 
 **Your spreadsheet will now be updated every day at your desired time with your campaigns/ad groups data!**
 

@@ -25,13 +25,13 @@ export default function Home({ posts }) {
           <article key={slug}>
             <header>
               <h3 className="mb-0 mt-4">
-                <Link href={"/post/[slug]"} as={`/post/${slug}`}>
+                <Link href={"/blog/[slug]"} as={`/blog/${slug}`}>
                   <a className="text-2xl font-semibold text-indigo-600 no-underline">
                     {title}
                   </a>
                 </Link>
               </h3>
-              <span className="mb-6 text-xs">written on {date}</span>
+              <span className="mb-6">written on {date}</span>
             </header>
           </article>
         ))}
@@ -50,7 +50,7 @@ export async function getStaticProps() {
 
     const { data } = matter(markdownWithMetadata);
 
-    const options = { year: "numeric", month: "long", day: "numeric" };
+    const options = { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" };
     const formattedDate = data.date.toLocaleDateString("en-US", options);
 
     const frontmatter = {

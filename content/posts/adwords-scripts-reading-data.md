@@ -74,7 +74,7 @@ function main() {
 ```
 
 In the Google Ads scripts interface, your *running* campaigns and with their respective budgets should appear:
-![Final result](final_result.png)
+![Final result](/images/final_result.png)
 
 (Obviously, your own results will differ from mine 😊).
 
@@ -94,7 +94,7 @@ function getAllAdGroups() {
 ```
 
 As budgets are placed on a campaign level, you would get an error trying to run `javascript›adGroup.getBudget()` so I simply ommited it here.
-![Ad groups result](ag_result.png)
+![Ad groups result](/images/ag_result.png)
 
 ## Getting a list of ads inside an ad group
 Same thing with ads, we can simply replace `javascript›AdsApp.adGroups()` by `javascript›AdsApp.ads()`. But let's do things a bit differently this time. Let's get the ads inside a specific ad group.

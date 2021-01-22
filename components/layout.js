@@ -36,8 +36,20 @@ export default function Layout({ children }) {
     </div>
   )
 
+  const menu = (
+    <nav className="menu bg-indigo-800 text-white p-2 px-4">
+      <div className="links space-x-4 md:space-x-16 text-center">
+        <span><Link href="/">Home</Link></span>
+        <span><Link href="/blog">Blog</Link></span>
+        <span><Link href="/resume">Résumé</Link></span>
+        <span><Link href="/about">About</Link></span>
+      </div>
+    </nav>
+  )
+
   return (
     <div className="mx-auto">
+      <div>{menu}</div>
       <header>{header}</header>
       <main className="max-w-3xl mx-auto p-6">{children}</main>
     </div>

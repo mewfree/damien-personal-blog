@@ -18,15 +18,15 @@ First, let's create a fresh Google Spreadsheet using the handy [sheet.new](https
 
 You should see an empty Google Spreadsheet, as below.
 
-![Empty Sheet](empty_sheet.png)
+![Empty Sheet](/images/empty_sheet.png)
 
 Next, click on: __Tool > Script Editor__
 
-![Script Editor Menu](script_editor_menu.png)
+![Script Editor Menu](/images/script_editor_menu.png)
 
 A new browser window should have opened showing Google Apps Script's IDE (code editor) with an empty `myFunction`.
 
-![Empty Script](empty_script.png)
+![Empty Script](/images/empty_script.png)
 
 Note that Google Apps Scripts does not support ES6 but older versions of JavaScript only.
 
@@ -50,7 +50,7 @@ Next, run the script ▶️.
 Go to View > Logs or use the Ctrl/Cmd + Enter shortcut to open the Logs window.
 
 Congrats, you've run your first Google Apps Script!
-![Logs Hello World](logs_hello_world_700.png)
+![Logs Hello World](/images/logs_hello_world_700.png)
 
 ## Custom Function Basic Example
 Let's do a very simple custom function to show how it's possible to create our own personal functions in Google Spreadsheet.
@@ -65,7 +65,7 @@ function double(number) {
 The goal of the function is to return the double of the number used as input.
 
 Hit save 💾 and try your new spreadsheet function:
-![Double Example](double_example.gif)
+![Double Example](/images/double_example.gif)
 
 Congrats, you've just augmented your Spreadsheet with the power of JavaScript!
 
@@ -87,13 +87,13 @@ Hit save 💾 and you should see an authorization as it's the first time we're r
 
 Click on __Review Permissions__ when the window prompts you.
 
-![Unsafe App](unsafe_app_600.png)
+![Unsafe App](/images/unsafe_app_600.png)
 Click on __Advanced__ and then __Go to {project name} (unsafe)__ (it is safe since you're the project creator).
 
-![This Will Allow](this_will_allow_650.png)
+![This Will Allow](/images/this_will_allow_650.png)
 Click on __Allow__.
 
-![Logs Example](logs_example.png)
+![Logs Example](/images/logs_example.png)
 As you can see above, we've got the full HTML response of a GET query to `example.com`.
 
 Let's do the real thing using Facebook Insights API.
@@ -131,10 +131,10 @@ Notice how since Facebook's response is in JSON we are using `JSON.parse()` to p
 Do not forget to replace the `access_token` by your own access token and to add your own Facebook account ID when `FBInsights()` is called inside `run()` (or any other entity ID, like a campaign ID or an ad set ID).
 
 A `run()` function is needed to wrap the `FBInsights()` function to be able to run it with parameters. Do not forget to switch the function to be run by `run()` before clicking on ▶️.
-![Change Function](change_function.png)
+![Change Function](/images/change_function.png)
 
 Open Logs and you should see data for your entity from yesterday.
-![Yesterday Logs](yesterday_logs.png)
+![Yesterday Logs](/images/yesterday_logs.png)
 
 ## Query With Custom Dates
 Let's tweak our existing script in order to be able to use a custom date:
@@ -196,7 +196,7 @@ You can now use `=FBInsights("entity_id", TEXT("date", "yyyy-mm-dd"), "field_nam
 
 Here is an example to retrieve spend for dates in column A. Formula I'm using in the example below: `=FBInsights("REPLACE_BY_YOUR_ENTITY_ID", TEXT(A2, "yyyy-mm-dd"), "spend")`
 
-![Spend by Date](spend_by_date.gif)
+![Spend by Date](/images/spend_by_date.gif)
 
 Now try it yourself with different fields (clicks, impressions...)!
 

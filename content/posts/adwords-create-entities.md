@@ -55,7 +55,7 @@ var campaign = AdsApp.campaigns()
 I added `javascript›.withStatus('PAUSED')` as a safety measure to make sure we have time to review what we create before going live!
 
 If you preview the above script in your `javascript›main()` function, for the first time you should see something in the CHANGES section:
-![ad group builder preview](ag_builder_preview.png)
+![ad group builder preview](/images/ag_builder_preview.png)
 
 As always, this is what our Google Ads Script would do if it was actually run.
 
@@ -84,7 +84,7 @@ We'd probably want to create an ad group for each of those cities:
 ```
 
 Now, that is all fine and dandy, but if you like standardization like me, you'll want to have ad groups that are more computer-readable, so for example, having `new_york_city` instead of `New York City` as an ad group name. We can simply lowercase the name and replace spaces with underscores (`javascript›city.toLowerCase().replace(/ /g, '_')`).
-![ad group builder cities preview](ag_builder_cities_preview.png)
+![ad group builder cities preview](/images/ag_builder_cities_preview.png)
 
 # 🙌
 
@@ -149,7 +149,7 @@ cities.forEach(function(city) {
 
 Now take a look at the preview results.
 
-![keyword builder preview](kw_builder_preview.png)
+![keyword builder preview](/images/kw_builder_preview.png)
 
 # 😍
 
@@ -232,9 +232,9 @@ Go ahead and run it after making sure no errors occur during the preview.
 # Results
 
 ## Keywords list:
-![keywords result](keywords_result.png)
+![keywords result](/images/keywords_result.png)
 
 ## Ads list:
-![ads_result.png](ads_result.png)
+![ads_result.png](/images/ads_result.png)
 
 Pretty amazing that we created these ads automatically. It would be little to no effort to scale them to include any number of cities! Last step is to unpause your ad groups whenever you're ready to launch 🚀.

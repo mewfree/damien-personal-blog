@@ -12,17 +12,17 @@ Facebook Marketing API is a way to automatically create, read, modify and delete
 # Generating an Access Token
 Go to [https://developers.facebook.com/docs/marketing-apis/](https://developers.facebook.com/docs/marketing-apis/) and follow the steps to create a new Ads App. Make sure you select "Implement Marketing API" and "Get Started with the Ads Insights API" as shown below.
 
-![facebook new app scenario interface](create_new_fb_app.png)
+![facebook new app scenario interface](/images/create_new_fb_app.png)
 
 You should then be able to go to your ads page through [https://developers.facebook.com/apps/](https://developers.facebook.com/apps/).
 
 Navigate to Settings > Basic. Copy and paste your App ID and App Secret somewhere safe.
 
-![Settings Basic](fb_settings_basic.png)
+![Settings Basic](/images/fb_settings_basic.png)
 
 Navigate to Products > Marketing API > Tools. Select `ads_management` and `ads_read`. Click on Get Token. Your access token will appear on the screen. Copy and paste it somewhere safe.
 
-![Products Marketing API Tools](fb_marketingapi_tools.png)
+![Products Marketing API Tools](/images/fb_marketingapi_tools.png)
 
 You will need these credentials throughout this tutorial. Make sure no one else can have access to your access token as it can be used to read, create, modify and delete any ads in your ad accounts.
 
@@ -50,7 +50,7 @@ print(my_accounts)
 
 Save it under `index.py` (for example) and run it. You should see something similar appear in your terminal:
 
-![get fb accounts](get_fb_accounts.png)
+![get fb accounts](/images/get_fb_accounts.png)
 
 🚀 Congrats! You've run your first Facebook Marketing API-based script.
 

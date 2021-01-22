@@ -62,7 +62,7 @@ function main() {
 ```
 
 Now, I commented out the `javascript›keyword.getText()` log in order to protect the private information of the client I was trying this script on, but we can see that all the keywords have indeed an avg. pos. of 2 or worse:
-![keywords_avg_pos](keywords_avg_pos.png)
+![keywords_avg_pos](/images/keywords_avg_pos.png)
 
 ## Raising max CPCs on keywords
 Let's take care of the bids now! It's pretty straightforward to do so by using `javascript›.bidding().setCpc()` on the `keyword` entity, but first, we need to get the current max CPC to calculate the new bid (remember we want to raise the bids by 10%). This is done by using `javascript›.bidding().getCpc()`. With all this knowledge, final formula is very simple:
@@ -96,11 +96,11 @@ function main() {
 ```
 
 Now, if you press the preview button, for the first time you'll see some stuff appear in the __Changes__ section! Don't worry, changes haven't been made yet, Google Ads is only showing you what the changes would be if you actually run the script.
-![keywords_change](keywords_change.png)
+![keywords_change](/images/keywords_change.png)
 
 The last step is to press on __Run__ instead of Preview. Be careful, this will change max CPCs in your real account.
 
 __Congrats, your Google Ads Script made changes on your behalf!__
 
  Now that we're happy with our script since it looks back on the past 7 days data, wouldn't it be nice if it ran on a weekly basis? On the Google Ads scripts list, you can set the frequency to weekly and choose the day of the week and time that suits you:
-![frequency_change](frequency_change.png)
+![frequency_change](/images/frequency_change.png)

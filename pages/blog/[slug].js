@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Link from "next/link";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -23,6 +24,13 @@ export default function Post({ content, frontmatter }) {
         <title>{frontmatter.title} - Damien Gonot</title>
       </Head>
       <div className="mb-8">
+        <div className="mb-4">
+          <Link href="/blog">
+            <a className="font-semibold text-indigo-600 no-underline hover:text-black">
+              {"<< Go back to all articles"}
+            </a>
+          </Link>
+        </div>
         <h1 className="text-4xl font-bold text-center">{frontmatter.title}</h1>
         <div className="text-center">written on {frontmatter.date}</div>
       </div>

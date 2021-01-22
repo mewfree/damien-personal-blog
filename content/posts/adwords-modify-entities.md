@@ -23,10 +23,10 @@ This should be easy to do thanks to what we've learnt in the [previous tutorial]
 Then, we'll raise the bids on those keywords by an arbitrary amount (+10%) in order to try to raise the avg. pos. to 2 or better.
 
 ## Fetching keywords with a specific average position
-In order to combine the `javascript›.withCondition()` method with a statistic (like `Average Position`) we have to precise a date range with `javascript›.forDateRange()`.
+In order to combine the `.withCondition()` method with a statistic (like `Average Position`) we have to precise a date range with `.forDateRange()`.
 Google Ads provide a few ready-to-use ranges such as `YESTERDAY`, `LAST_7_DAYS`, `LAST_30_DAYS`...
 The complete list of ranges can be found [here](https://developers.google.com/adwords/scripts/docs/reference/adwordsapp/adwordsapp_keywordselector#forDateRange_2).
-A custom `dateFrom` and `dateTo` at the `YYYYMMDD` format can also be used (example: `javascript›.forDateRange('20180401', '20180410')` for the first 10 days of April 2018).
+A custom `dateFrom` and `dateTo` at the `YYYYMMDD` format can also be used (example: `.forDateRange('20180401', '20180410')` for the first 10 days of April 2018).
 We'll use `LAST_7_DAYS` this time.
 ```javascript
 function fetchingKeywords() {
@@ -38,7 +38,7 @@ function fetchingKeywords() {
 }
 ```
 
-In order to test the `javascript›.withCondition()` method is working, we can read the avg. pos. of the result using `javascript›keyword.getStatsFor('LAST_7_DAYS').getAveragePosition()`.
+In order to test the `.withCondition()` method is working, we can read the avg. pos. of the result using `keyword.getStatsFor('LAST_7_DAYS').getAveragePosition()`.
 Obviously, same date range has to be used or results would differ.
 
 ```javascript
@@ -61,11 +61,11 @@ function main() {
 }
 ```
 
-Now, I commented out the `javascript›keyword.getText()` log in order to protect the private information of the client I was trying this script on, but we can see that all the keywords have indeed an avg. pos. of 2 or worse:
+Now, I commented out the `keyword.getText()` log in order to protect the private information of the client I was trying this script on, but we can see that all the keywords have indeed an avg. pos. of 2 or worse:
 ![keywords_avg_pos](/images/keywords_avg_pos.png)
 
 ## Raising max CPCs on keywords
-Let's take care of the bids now! It's pretty straightforward to do so by using `javascript›.bidding().setCpc()` on the `keyword` entity, but first, we need to get the current max CPC to calculate the new bid (remember we want to raise the bids by 10%). This is done by using `javascript›.bidding().getCpc()`. With all this knowledge, final formula is very simple:
+Let's take care of the bids now! It's pretty straightforward to do so by using `.bidding().setCpc()` on the `keyword` entity, but first, we need to get the current max CPC to calculate the new bid (remember we want to raise the bids by 10%). This is done by using `.bidding().getCpc()`. With all this knowledge, final formula is very simple:
 ```javascript
   var new_bid = keyword.bidding().getCpc() * 1.1;
   keyword.bidding().setCpc(new_bid);

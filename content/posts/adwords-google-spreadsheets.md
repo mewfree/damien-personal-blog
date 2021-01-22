@@ -12,8 +12,8 @@ The first step in reading Google Spreadsheets data is to choose which Spreadshee
 Hopefully, you already have a specific project/sheet in mind.
 
 You can open a spreadsheet by either ID or URL:
-- `javascript›SpreadsheetApp.openByID();`
-- `javascript›SpreadsheetApp.openByUrl();`
+- `SpreadsheetApp.openByID();`
+- `SpreadsheetApp.openByUrl();`
 
 There are no differences between the two, but I have a small preference for the later as it feels simpler and more natural to me.
 
@@ -35,9 +35,9 @@ After this is done, you should be able to see your spreadsheet's name in the log
 ![Spreadsheet name log](/images/spreadsheet_name_log.png)
 
 ## Selecting a sheet
-Spreadsheets can hold multiples sheets. We can select a sheet either by its name (`javascript›spreadsheet.getSheetByName('sheet_name')`) or its position (`javascript›spreadsheet.getSheets()[0]` for the first sheet, `javascript›spreadsheet.getSheets()[1]` for the second sheet...).
+Spreadsheets can hold multiples sheets. We can select a sheet either by its name (`spreadsheet.getSheetByName('sheet_name')`) or its position (`spreadsheet.getSheets()[0]` for the first sheet, `spreadsheet.getSheets()[1]` for the second sheet...).
 
-I'll use `javascript›.getSheetByName()` so that my script still works even if I re-order the sheets.
+I'll use `.getSheetByName()` so that my script still works even if I re-order the sheets.
 
 ```javascript
 function main() {
@@ -57,13 +57,13 @@ This should log `read` as it is the sheet we selected and are currently working 
 ## Reading values
 Once again, we're offered many possibilities here!
 
-A pretty straightforward solution is to use `javascript›sheet.getSheetValues(startRow, startColumn, numRows, numColumns)`. Keep in mind sheets rows and columns index start at 1. A value of -1 means it is the last row or column with data. Therefore getting the values for an entire sheet would be done this way: `javascript›sheet.getSheetValues(1, 1, -1, -1)`.
+A pretty straightforward solution is to use `sheet.getSheetValues(startRow, startColumn, numRows, numColumns)`. Keep in mind sheets rows and columns index start at 1. A value of -1 means it is the last row or column with data. Therefore getting the values for an entire sheet would be done this way: `sheet.getSheetValues(1, 1, -1, -1)`.
 
-Another solution is to use `javascript›.getRange()` followed by `javascript›.getValues()` for a grid selection, or `javascript›.getValue()` for a single cell (or the first cell of the range). This function has a flexible number of arguments:
-- `javascript›.getRange(a1Notation)`: uses the same notation you would use in a formula inside a spreadsheet, which may be the most natural for you. Examples: `javascript›sheet.getRange('A1').getValue()` gets you the content of the first (A1) cell, `javascript›sheet.getRange('A1:A5').getValues()` gets you the content of the first 5 rows of the first column, `javascript›sheet.getRange('A1:C10').getValues()` gets you the content of the `A1:C10` grid.
-- `javascript›.getRange(row, column)`: for a single cell. Example: `javascript›sheet.getRange(1, 1).getValue()` to get the value of the first cell (first column, first row) of the sheet. Corresponds to the A1 cell.
-- `javascript›.getRange(row, column, numRows)`: for a "vertical" selection. Example: `javascript›sheet.getRange(2, 1, 4).getValues()` to get the values of the first column, starting from the second row, up until row 5.
-- `javascript›.getRange(row, column, numRows, numColumns)`: same principle as for `javascript›.getSheetValues`.
+Another solution is to use `.getRange()` followed by `.getValues()` for a grid selection, or `.getValue()` for a single cell (or the first cell of the range). This function has a flexible number of arguments:
+- `.getRange(a1Notation)`: uses the same notation you would use in a formula inside a spreadsheet, which may be the most natural for you. Examples: `sheet.getRange('A1').getValue()` gets you the content of the first (A1) cell, `sheet.getRange('A1:A5').getValues()` gets you the content of the first 5 rows of the first column, `sheet.getRange('A1:C10').getValues()` gets you the content of the `A1:C10` grid.
+- `.getRange(row, column)`: for a single cell. Example: `sheet.getRange(1, 1).getValue()` to get the value of the first cell (first column, first row) of the sheet. Corresponds to the A1 cell.
+- `.getRange(row, column, numRows)`: for a "vertical" selection. Example: `sheet.getRange(2, 1, 4).getValues()` to get the values of the first column, starting from the second row, up until row 5.
+- `.getRange(row, column, numRows, numColumns)`: same principle as for `.getSheetValues`.
 
 ## Real-life example
 Remember my fake bike repair shops from the [Programmatically Create Ads](/blog/adwords-scripts-create-ads) article?
@@ -158,14 +158,14 @@ function main() {
 }
 ```
 
-`javascript›.getStatsFor(date_range)` is a useful method to get statistical data for a specific date range. Other date ranges like `LAST_7_DAYS` or `LAST_MONTH` can be used.
+`.getStatsFor(date_range)` is a useful method to get statistical data for a specific date range. Other date ranges like `LAST_7_DAYS` or `LAST_MONTH` can be used.
 
 Result:
 ```
 [[ad group name, yesterday impressions, yesterday clicks, yesterday avg CPC, yesterday cost], [philadelphia, 0, 0, 0.0, 0.0], [chicago, 0, 0, 0.0, 0.0], [los_angeles, 0, 0, 0.0, 0.0], [houston, 0, 0, 0.0, 0.0], [new_york_city, 0, 0, 0.0, 0.0]]
 ```
 
-This is from a paused campaign so every stat is at 0 but you should see your real-life numbers. Our data is now well structured. The last step is to write the data in the sheet by adding `javascript›.setValues()` at the end.
+This is from a paused campaign so every stat is at 0 but you should see your real-life numbers. Our data is now well structured. The last step is to write the data in the sheet by adding `.setValues()` at the end.
 
 ## Final script
 ```javascript

@@ -34,7 +34,7 @@ var campaign = AdsApp.campaigns()
     .get()
     .next();
 ```
-I threw a `javascript›.withLimit(1)` in there just to be sure we're only selecting one campaign.
+I threw a `.withLimit(1)` in there just to be sure we're only selecting one campaign.
 
 Once we've selected the campaign in which we want to create our new ad groups, this is how adding a new ad group is done:
 ```javascript
@@ -52,14 +52,14 @@ var campaign = AdsApp.campaigns()
     .build();
 ```
 
-I added `javascript›.withStatus('PAUSED')` as a safety measure to make sure we have time to review what we create before going live!
+I added `.withStatus('PAUSED')` as a safety measure to make sure we have time to review what we create before going live!
 
-If you preview the above script in your `javascript›main()` function, for the first time you should see something in the CHANGES section:
+If you preview the above script in your `main()` function, for the first time you should see something in the CHANGES section:
 ![ad group builder preview](/images/ag_builder_preview.png)
 
 As always, this is what our Google Ads Script would do if it was actually run.
 
-As a fake bike repair shop owner for the purpose of this tutorial, I have a list of cities where my shops are located that I want to advertise on Google Search. Lists (called arrays in JavaScript) are defined this way: `javascript›var cities = ['New York City', 'Los Angeles', 'Chicago', 'Houston', 'Philadelphia'];`
+As a fake bike repair shop owner for the purpose of this tutorial, I have a list of cities where my shops are located that I want to advertise on Google Search. Lists (called arrays in JavaScript) are defined this way: `var cities = ['New York City', 'Los Angeles', 'Chicago', 'Houston', 'Philadelphia'];`
 
 It is also possible to read such a list from a Google Spreadsheet but I'll leave that for another tutorial 😉.
 
@@ -83,7 +83,7 @@ We'd probably want to create an ad group for each of those cities:
   });
 ```
 
-Now, that is all fine and dandy, but if you like standardization like me, you'll want to have ad groups that are more computer-readable, so for example, having `new_york_city` instead of `New York City` as an ad group name. We can simply lowercase the name and replace spaces with underscores (`javascript›city.toLowerCase().replace(/ /g, '_')`).
+Now, that is all fine and dandy, but if you like standardization like me, you'll want to have ad groups that are more computer-readable, so for example, having `new_york_city` instead of `New York City` as an ad group name. We can simply lowercase the name and replace spaces with underscores (`city.toLowerCase().replace(/ /g, '_')`).
 ![ad group builder cities preview](/images/ag_builder_cities_preview.png)
 
 # 🙌
@@ -103,7 +103,7 @@ Keywords are built using the same technique as ad groups but with some specifici
 
  I chose to follow the first solution but anything is possible!
 
-First, we'll need to modify our previous script a bit to get the "result" (the newly created ad group) back through `javascript›.getResult()`. Afterwards, we'll need to decide what keywords we want to add. It is a good idea to use broad match modifiers (sometimes shortened as BMM) as Google Ads might be a bit overzealous with regular broad match keywords. Here is a short list using Chicago as an example:
+First, we'll need to modify our previous script a bit to get the "result" (the newly created ad group) back through `.getResult()`. Afterwards, we'll need to decide what keywords we want to add. It is a good idea to use broad match modifiers (sometimes shortened as BMM) as Google Ads might be a bit overzealous with regular broad match keywords. Here is a short list using Chicago as an example:
 - +bike +repair +chicago
 - +bike +repair +shop +chicago
 - +bike +shop +chicago
@@ -112,7 +112,7 @@ Some keywords may overlap but we're going to maximize our Quality Score and win 
 
 Doesn't sound too complicated, except a lot of American city names include spaces (and I'm not even talking about French city names that can be hyphenated like Aix-en-Provence in France or Saint-Jérôme in Québec) but I have a trick to handle that. By prepending `+` before our keyword and replacing every space by `[space]+`, we should have our broad match modifier keyword.
 
-Example: `javascript›Logger.log('+' + 'bike repair Chicago'.replace(/ /g, ' +'));` gets us `+bike +repair +chicago`!
+Example: `Logger.log('+' + 'bike repair Chicago'.replace(/ /g, ' +'));` gets us `+bike +repair +chicago`!
 
 I don't want to repeat myself so I'll put my list of keywords in a list that can be iterated on.
 

@@ -1,5 +1,7 @@
-# Damien-Next
-Next-generation damiengonot.com
+# damien-personal-blog
+[damiengonot.com](https://www.damiengonot.com), powered by Next.js.
 
-## Dev
-`npm run dev`
+Hosted on Netlify.
+
+## Development
+`yarn dev`

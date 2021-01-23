@@ -6,7 +6,7 @@ folders.each do |folder|
   files = Dir.glob("#{folder}/*")
   files.each do |file|
     if !file.include?(".md")
-      df = "#{Dir.home}/dev/damien-next/public/images/#{file.split('/')[-1]}"
+      df = "#{Dir.home}/dev/damien-personal-blog/public/images/#{file.split('/')[-1]}"
       FileUtils.cp(file, df)
     end
   end

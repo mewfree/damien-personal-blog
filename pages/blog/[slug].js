@@ -58,7 +58,7 @@ export default function Post({ content, frontmatter }) {
             </a>
           </Link>
         </div>
-        <div className="text-center">{frontmatter.tags.map(tag => <span className="text-xs bg-gray-200 rounded mx-2 p-1">{tag}</span>)}</div>
+        <div className="text-center">{frontmatter.tags.map(tag => <span className="text-xs bg-gray-200 rounded mx-2 p-1" key={tag}>{tag}</span>)}</div>
         <div className="text-center mt-4">Damien Gonot, {frontmatter.year}</div>
       </footer>
     </Layout>

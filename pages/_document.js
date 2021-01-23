@@ -5,7 +5,7 @@ import typography from "../utils/typography";
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
           <TypographyStyle typography={typography} />
         </Head>

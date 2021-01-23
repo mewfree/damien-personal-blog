@@ -39,14 +39,7 @@ export default function Post({ content, frontmatter }) {
       <Head>
         <title>{frontmatter.title} - Damien Gonot</title>
       </Head>
-      <div className="mb-8">
-        <div className="mb-4">
-          <Link href="/blog">
-            <a className="font-semibold text-indigo-600 no-underline hover:text-black">
-              {"<< Go back to all articles"}
-            </a>
-          </Link>
-        </div>
+      <div className="mt-4 mb-10">
         <h1 className="text-4xl font-bold text-center">{frontmatter.title}</h1>
         <div className="text-center">written on {frontmatter.date}</div>
       </div>
@@ -57,6 +50,17 @@ export default function Post({ content, frontmatter }) {
           renderers={{ inlineCode: InlineCodeBlock, code: CodeBlock }}
         />
       </article>
+      <footer className="mt-48">
+        <div className="mb-4">
+          <Link href="/blog">
+            <a className="font-semibold text-indigo-600 no-underline hover:text-black">
+              {"<< Go back to all articles"}
+            </a>
+          </Link>
+        </div>
+        <div className="text-center">{frontmatter.tags.map(tag => <span className="text-xs bg-gray-200 rounded mx-2 p-1">{tag}</span>)}</div>
+        <div className="text-center mt-4">Damien Gonot, {frontmatter.year}</div>
+      </footer>
     </Layout>
   );
 }
@@ -86,10 +90,12 @@ export async function getStaticProps({ params: { slug } }) {
   // Convert post date to format: Month day, Year
   const options = { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" };
   const formattedDate = data.date.toLocaleDateString("en-US", options);
+  const year = data.date.getFullYear();
 
   const frontmatter = {
     ...data,
     date: formattedDate,
+    year: data.date.getFullYear(),
   };
 
   return {

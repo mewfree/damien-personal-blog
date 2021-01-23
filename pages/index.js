@@ -13,7 +13,8 @@ export default function Home({ posts }) {
           Introduction
         </div>
         <div className="pl-4 mt-4">
-          Hi, I'm Damien.
+          <div>Hi, I'm Damien.</div>
+          <div>I'm a software developer specializing in automating marketing strategies and reporting.</div>
         </div>
       </div>
       <div className="text-3xl font-bold">

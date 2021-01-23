@@ -41,7 +41,7 @@ export default function Layout({ children }) {
       <div className="links space-x-4 md:space-x-16 text-center">
         <span><Link href="/">Home</Link></span>
         <span><Link href="/blog">Blog</Link></span>
-        <span><Link href="/resume">Résumé</Link></span>
+        <span><Link href="/damiengonot_resume.pdf">Résumé</Link></span>
         <span><Link href="/about">About</Link></span>
       </div>
     </nav>

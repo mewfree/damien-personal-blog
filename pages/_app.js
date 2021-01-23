@@ -8,6 +8,8 @@ export default function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>Damien Gonot</title>
+        <meta name="description" content={`Damien Gonot's personal website (${new Date().getFullYear()})`} />
+        <meta name="keywords" content="damien, gonot, damien gonot, personal" />
       </Head>
       <Component {...pageProps} />
     </>

@@ -8,6 +8,8 @@ export default function About() {
     <Layout>
       <Head>
         <title>About - Damien Gonot</title>
+        <meta name="description" content="About Damien Gonot" />
+        <meta name="keywords" content="damien, gonot, damien gonot, about, linkedin, github, contact" />
       </Head>
       <div className="text-3xl font-bold">
         About

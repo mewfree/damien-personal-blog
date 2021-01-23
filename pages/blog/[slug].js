@@ -33,11 +33,15 @@ const CodeBlock = ({ language, value }) => {
   );
 };
 
-export default function Post({ content, frontmatter }) {
+export default function Post({ content, excerpt, frontmatter }) {
   return (
     <Layout>
       <Head>
         <title>{frontmatter.title} - Damien Gonot</title>
+        <meta name="description" content={excerpt} />
+        <meta name="keywords" content={frontmatter.tags.toString()} />
+        <meta name="og:title" content={`${frontmatter.title} - Damien Gonot`} />
+        <meta name="og:description" content={excerpt} />
       </Head>
       <div className="mt-4 mb-10">
         <h1 className="text-4xl font-bold text-center">{frontmatter.title}</h1>
@@ -101,6 +105,7 @@ export async function getStaticProps({ params: { slug } }) {
   return {
     props: {
       content: `${content}`,
+      excerpt: `${content.substring(0, 297)}...`,
       frontmatter,
     },
   };

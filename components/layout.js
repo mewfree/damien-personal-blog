@@ -5,24 +5,6 @@ export default function Layout({ children }) {
   const { pathname } = useRouter();
   const isRoot = pathname === "/";
 
-  // const header = isRoot ? (
-  //   <h1 className="mb-8">
-  //     <Link href="/">
-  //       <a className="text-6xl font-black text-black no-underline">
-  //         Damien Gonot
-  //       </a>
-  //     </Link>
-  //   </h1>
-  // ) : (
-  //   <h1 className="mb-4">
-  //     <Link href="/">
-  //       <a className="text-4xl font-black text-black no-underline">
-  //         Damien Gonot
-  //       </a>
-  //     </Link>
-  //   </h1>
-  // );
-
   const header = (
     <div className="flex flex-col bg-indigo-600 p-12">
       <h1 className="text-center mb-2">

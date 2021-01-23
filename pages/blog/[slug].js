@@ -9,12 +9,28 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 
 import Layout from "../../components/layout";
 
-const InlineCode = ({ language, value }) => {
-  return <SyntaxHighlighter language={language} PreTag="span">{value}</SyntaxHighlighter>;
+const InlineCodeBlock = ({ value }) => {
+  return (
+    <SyntaxHighlighter
+      language="javascript"
+      PreTag="span"
+      customStyle={{
+        display: undefined,
+        padding: undefined,
+      }}
+      wrapLongLines={true}>
+      {value}
+    </SyntaxHighlighter>
+  );
 };
 
 const CodeBlock = ({ language, value }) => {
-  return <SyntaxHighlighter language={language}>{value}</SyntaxHighlighter>;
+  return (
+    <SyntaxHighlighter
+      language={language}>
+      {value}
+    </SyntaxHighlighter>
+  );
 };
 
 export default function Post({ content, frontmatter }) {
@@ -38,7 +54,7 @@ export default function Post({ content, frontmatter }) {
         <ReactMarkdown
           escapeHtml={false}
           source={content}
-          renderers={{ inlineCode: InlineCode, code: CodeBlock }}
+          renderers={{ inlineCode: InlineCodeBlock, code: CodeBlock }}
         />
       </article>
     </Layout>

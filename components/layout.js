@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import MailchimpForm from "../components/MailchimpForm";
 
 export default function Layout({ children }) {
   const { pathname } = useRouter();

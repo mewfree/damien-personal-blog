@@ -8,6 +8,7 @@ import ReactMarkdown from "react-markdown";
 import SyntaxHighlighter from "react-syntax-highlighter";
 
 import Layout from "../../components/layout";
+import MailchimpForm from "../../components/MailchimpForm";
 
 const InlineCodeBlock = ({ value }) => {
   return (
@@ -55,6 +56,7 @@ export default function Post({ content, excerpt, frontmatter }) {
         />
       </article>
       <footer className="mt-48">
+        <div className="text-center"><MailchimpForm /></div>
         <div className="mb-4">
           <Link href="/blog">
             <a className="font-semibold text-indigo-600 no-underline hover:text-black">

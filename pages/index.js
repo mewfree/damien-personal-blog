@@ -4,6 +4,7 @@ import fs from "fs";
 import matter from "gray-matter";
 
 import Layout from "../components/layout";
+import MailchimpForm from "../components/MailchimpForm";
 
 export default function Home({ posts }) {
   return (
@@ -36,12 +37,15 @@ export default function Home({ posts }) {
           </article>
         ))}
       </div>
-      <div className="pl-4 mt-6">
+      <div className="pl-4 mt-6 mb-8">
         <Link href="/blog">
           <a className="text-2xl font-semibold text-indigo-600 no-underline hover:text-black">
             See all articles
           </a>
         </Link>
+      </div>
+      <div className="max-w-xl">
+        <MailchimpForm />
       </div>
     </Layout>
   );

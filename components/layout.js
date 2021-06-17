@@ -1,10 +1,6 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
-import MailchimpForm from "../components/MailchimpForm";
 
 export default function Layout({ children }) {
-  const { pathname } = useRouter();
-  const isRoot = pathname === "/";
 
   const header = (
     <div className="flex flex-col bg-indigo-600 p-12">
@@ -24,7 +20,7 @@ export default function Layout({ children }) {
       <div className="links space-x-4 md:space-x-16 text-center">
         <span><Link href="/">Home</Link></span>
         <span><Link href="/blog">Blog</Link></span>
-        <span><Link href="/damiengonot_resume.pdf">Résumé</Link></span>
+        <span><Link href="/resume">Résumé</Link></span>
         <span><Link href="/about">About</Link></span>
       </div>
     </nav>

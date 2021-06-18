@@ -13,7 +13,7 @@ export default function Resume() {
         <meta name="description" content="Damien Gonot's résumé" />
         <meta name="keywords" content="damien, gonot, damien gonot, résumé, cv, pdf" />
       </Head>
-      <div className="text-3xl font-bold">
+      <div className="text-3xl font-bold text-center">
         Résumé
       </div>
       <div className="pl-4 mt-4">

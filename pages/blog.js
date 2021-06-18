@@ -14,7 +14,7 @@ export default function Home({ posts }) {
         <meta name="description" content="Damien Gonot's blog" />
         <meta name="keywords" content="damien, gonot, damien gonot, blog, personal blog" />
       </Head>
-      <div className="text-3xl font-bold">
+      <div className="text-3xl font-bold text-center">
         All blog articles
       </div>
       <div className="pl-4">

@@ -11,7 +11,7 @@ export default function About() {
         <meta name="description" content="About Damien Gonot" />
         <meta name="keywords" content="damien, gonot, damien gonot, about, linkedin, github, contact" />
       </Head>
-      <div className="text-3xl font-bold">
+      <div className="text-3xl font-bold text-center">
         About
       </div>
       <div className="pl-4 mt-4">

@@ -123,6 +123,47 @@ export default function Resume() {
             universityLocation="Marseille, France"
           />
         </div>
+        <div className="text-2xl font-bold mt-4">
+          Skills & Interests
+        </div>
+        <div className="bg-indigo-100 rounded-md p-2">
+          <ul className="list-disc list-inside">
+            <li>
+              Google Ads (including Google Ads Scripts & Google Ads API), Facebook Ads (including Facebook Marketing API), Twitter Ads, Snap Ads, Apple Search Ads, TikTok Ads
+            </li>
+            <li>
+              Python, Ruby, Node.js, PostgreSQL, Redis
+            </li>
+            <li>
+              Interests in Functionnal Programming: Elixir, Clojure, Racket
+            </li>
+            <li>
+              Data Science: Pandas & NumPy libraries for Python, Julia, R
+            </li>
+            <li>
+              Tools: OS X, Linux, Emacs, Zsh + Tmux + (Neo)Vim, LaTeX
+            </li>
+            <li>
+              Last trip: Hong Kong & Seoul (Summer 2019)
+            </li>
+          </ul>
+        </div>
+        <div className="text-2xl font-bold mt-4">
+          Languages
+        </div>
+        <div className="bg-indigo-100 rounded-md p-2">
+          <ul className="list-disc list-inside">
+            <li>
+              French (native)
+            </li>
+            <li>
+              English (bilingual)
+            </li>
+            <li>
+              Mandarin Chinese (beginner)
+            </li>
+          </ul>
+        </div>
       </div>
       <div className="text-3xl font-bold mt-4">
         λ

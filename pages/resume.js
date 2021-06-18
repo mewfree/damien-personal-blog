@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import Layout from "../components/layout";
 import Job from "../components/job";
+import Study from "../components/study";
 
 export default function Resume() {
   return (
@@ -91,6 +92,35 @@ export default function Resume() {
               "On-page SEO, SEO content, interlinking, use of a crawler & log analysis tool (ELK stack).",
               "Created the Dollar Bus Club (alerts on $1 bus tickets on Twitter and by emails) and Busvsplane.com (Bus vs Plane comparison website, including Uber pricings to/from bus station/airport) as side-projects."
             ]}
+          />
+        </div>
+        <div className="text-2xl font-bold mt-4">
+          Education
+        </div>
+        <div id="list-of-education" className="flex flex-col gap-y-4">
+          <Study
+            dateFrom="2014"
+            dateTo="2015"
+            universityName="National Chengchi University"
+            collegeName="College of Commerce"
+            title="Exchange Student"
+            universityLocation="Taipei, Taiwan"
+          />
+          <Study
+            dateFrom="2013"
+            dateTo="2014"
+            universityName="Concordia University"
+            collegeName="John Molson School of Business"
+            title="Visiting Student"
+            universityLocation="Montreal, Quebec"
+          />
+          <Study
+            dateFrom="2011"
+            dateTo="2015"
+            universityName="Kedge Business School"
+            collegeName="International BBA (Bachelor in Business Administration)"
+            title="Full-time Student"
+            universityLocation="Marseille, France"
           />
         </div>
       </div>

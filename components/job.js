@@ -2,7 +2,9 @@ export default function Job(props) {
   return (
     <div className="flex flex-row items-center gap-x-4 bg-indigo-100 rounded-md p-2">
       <div className="font-semibold flex-shrink-0">
-        <div>{props.dateFrom}</div> <div>-</div> <div>{props.dateTo}</div>
+        <div>{props.dateFrom}</div>
+        <div>-</div>
+        <div>{props.dateTo}</div>
       </div>
       <div>
         <div>

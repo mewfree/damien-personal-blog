@@ -135,7 +135,7 @@ export default function Resume() {
               Python, Ruby, Node.js, PostgreSQL, Redis
             </li>
             <li>
-              Interests in Functionnal Programming: Elixir, Clojure, Racket
+              Interests in Functional Programming: Elixir, Clojure, Racket
             </li>
             <li>
               Data Science: Pandas & NumPy libraries for Python, Julia, R

@@ -29,7 +29,7 @@ export default function Resume() {
         <div className="text-2xl font-bold mt-4">
           Summary
         </div>
-        <div>I'm a software developer specializing in automating marketing strategies and reporting.</div>
+        <div>I&apos;m a software developer specializing in automating marketing strategies and reporting.</div>
         <div className="text-2xl font-bold mt-4">
           Experience
         </div>

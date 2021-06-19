@@ -16,7 +16,7 @@ export default function Job(props) {
         </div>
         <div>
           <ul className="list-disc list-inside">
-            {props.items.map(item => <li>{item}</li>)}
+            {props.items.map((item, index) => <li key={index}>{item}</li>)}
           </ul>
         </div>
       </div>

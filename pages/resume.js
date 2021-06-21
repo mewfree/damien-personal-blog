@@ -41,7 +41,7 @@ export default function Resume() {
             companyName="Wealthsimple"
             companyDescription="Financial services"
             companyLocation="Remote, Canada"
-            items={["Working on an internal service to scale creatives throughput and advertising spend."]}
+            items={["Working on an internal Ruby on Rails service to scale creatives throughput and advertising spend."]}
           />
           <Job
             dateFrom="Jul. 2020"

@@ -48,6 +48,17 @@ export default function About() {
         </div>
         <div>🧑‍🌾 How I run shell commands: kitty + tmux + zsh</div>
       </div>
+      <div className="text-2xl font-bold mt-4">Open Source</div>
+      <div className="pl-4">
+        <div>This website is open source!</div>
+        <div>
+          <Link href="https://github.com/mewfree/damien-personal-blog">
+            <a className="font-semibold text-indigo-600 no-underline hover:text-black">
+              👀 You can look at its source code here
+            </a>
+          </Link>
+        </div>
+      </div>
       <div className="text-3xl font-bold mt-4">λ</div>
     </Layout>
   );

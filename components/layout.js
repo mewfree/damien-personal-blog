@@ -18,10 +18,10 @@ export default function Layout({ children }) {
   const menu = (
     <nav className="menu bg-indigo-800 text-white p-2 px-4">
       <div className="links space-x-4 md:space-x-16 text-center">
-        <span><Link href="/">Home</Link></span>
-        <span><Link href="/blog">Blog</Link></span>
-        <span><Link href="/resume">Résumé</Link></span>
-        <span><Link href="/about">About</Link></span>
+        <span className="hover:text-indigo-200"><Link href="/">Home</Link></span>
+        <span className="hover:text-indigo-200"><Link href="/blog">Blog</Link></span>
+        <span className="hover:text-indigo-200"><Link href="/resume">Résumé</Link></span>
+        <span className="hover:text-indigo-200"><Link href="/about">About</Link></span>
       </div>
     </nav>
   )

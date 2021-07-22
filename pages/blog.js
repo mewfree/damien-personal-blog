@@ -23,7 +23,7 @@ export default function Home({ posts }) {
             <header>
               <h3 className="mb-0 mt-4">
                 <Link href={"/blog/[slug]"} as={`/blog/${slug}`}>
-                  <a className="text-2xl font-semibold text-indigo-600 no-underline hover:text-black">
+                  <a className="text-2xl font-semibold text-indigo-600 dark:text-indigo-400 no-underline hover:text-black dark:hover:text-indigo-200">
                     {title}
                   </a>
                 </Link>

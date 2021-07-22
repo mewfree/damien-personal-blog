@@ -1,9 +1,12 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useTheme } from 'next-themes';
 
 import Layout from "../components/layout";
 
 export default function About() {
+  const { theme, setTheme } = useTheme();
+
   return (
     <Layout>
       <Head>
@@ -21,7 +24,7 @@ export default function About() {
         <div>
           🖇 Where we can connect:{" "}
           <Link href="https://www.linkedin.com/in/damiengonot">
-            <a className="font-semibold text-indigo-600 no-underline hover:text-black">
+            <a className="font-semibold text-indigo-600 dark:text-indigo-400 no-underline hover:text-black dark:hover:text-indigo-200">
               https://www.linkedin.com/in/damiengonot
             </a>
           </Link>
@@ -29,7 +32,7 @@ export default function About() {
         <div>
           🧑‍💻 Where you can see my code:{" "}
           <Link href="https://github.com/mewfree">
-            <a className="font-semibold text-indigo-600 no-underline hover:text-black">
+            <a className="font-semibold text-indigo-600 dark:text-indigo-400 no-underline hover:text-black dark:hover:text-indigo-200">
               https://github.com/mewfree
             </a>
           </Link>
@@ -53,12 +56,15 @@ export default function About() {
         <div>This website is open source!</div>
         <div>
           <Link href="https://github.com/mewfree/damien-personal-blog">
-            <a className="font-semibold text-indigo-600 no-underline hover:text-black">
+            <a className="font-semibold text-indigo-600 dark:text-indigo-400 no-underline hover:text-black dark:hover:text-indigo-200">
               👀 You can look at its source code here
             </a>
           </Link>
         </div>
       </div>
+      <button type="button" className="rounded bg-indigo-200 hover:bg-indigo-400 text-indigo-800 dark:bg-indigo-800 dark:hover:bg-indigo-600 dark:text-white font-bold p-2 mt-4" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+        Toggle {theme === 'dark' ? 'light' : 'dark'} mode
+      </button>
       <div className="text-3xl font-bold mt-4">λ</div>
     </Layout>
   );

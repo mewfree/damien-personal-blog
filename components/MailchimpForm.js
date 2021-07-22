@@ -62,8 +62,8 @@ export default class MailchimpForm extends React.Component {
           Subscribe to my newsletter
         </label>
         <div className="flex flex-col md:flex-row mt-2">
-          <input className="w-full border border-gray-900 rounded bg-meg-beige focus:border-gray-600 focus:outline-none text-center md:text-left p-2 mb-2 md:mb-0 md:mr-2" id="email" type="email" placeholder="email@company.com" value={this.state.email} onChange={this.handleChange} required />
-          <input className="rounded bg-indigo-600 focus:outline-none cursor-pointer text-white font-bold p-2" type="submit" value="Subscribe" />
+          <input className="w-full border border-gray-900 dark:border-indigo-400 rounded bg-white dark:bg-indigo-100 text-black focus:border-gray-600 focus:outline-none text-center md:text-left p-2 mb-2 md:mb-0 md:mr-2" id="email" type="email" placeholder="email@company.com" value={this.state.email} onChange={this.handleChange} required />
+          <input className="rounded bg-indigo-600 hover:bg-indigo-800 focus:outline-none cursor-pointer text-white font-bold p-2" type="submit" value="Subscribe" />
         </div>
         <div className={this.state.success ? "text-green-700" : "hidden"}>
           {this.state.successMessage}

@@ -59,7 +59,7 @@ export default function Post({ content, excerpt, frontmatter }) {
         <div className="text-center"><MailchimpForm /></div>
         <div className="mb-4">
           <Link href="/blog">
-            <a className="font-semibold text-indigo-600 dark:text-indigo-400 no-underline hover:text-black dark:hover:text-indigo-200">
+            <a className="font-semibold">
               {"<< Go back to all articles"}
             </a>
           </Link>

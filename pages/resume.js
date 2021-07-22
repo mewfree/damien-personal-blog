@@ -19,7 +19,7 @@ export default function Resume() {
       <div className="pl-4 mt-4">
         <div className="text-center mb-4">
           <Link href="/damiengonot_resume.pdf">
-            <a className="text-xl font-semibold text-indigo-600 dark:text-indigo-400 hover:text-black dark:hover:text-indigo-200">
+            <a className="text-xl font-semibold">
               Download as a PDF
             </a>
           </Link>

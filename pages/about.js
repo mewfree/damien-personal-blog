@@ -24,7 +24,7 @@ export default function About() {
         <div>
           🖇 Where we can connect:{" "}
           <Link href="https://www.linkedin.com/in/damiengonot">
-            <a className="font-semibold text-indigo-600 dark:text-indigo-400 no-underline hover:text-black dark:hover:text-indigo-200">
+            <a className="font-semibold">
               https://www.linkedin.com/in/damiengonot
             </a>
           </Link>
@@ -32,7 +32,7 @@ export default function About() {
         <div>
           🧑‍💻 Where you can see my code:{" "}
           <Link href="https://github.com/mewfree">
-            <a className="font-semibold text-indigo-600 dark:text-indigo-400 no-underline hover:text-black dark:hover:text-indigo-200">
+            <a className="font-semibold">
               https://github.com/mewfree
             </a>
           </Link>
@@ -56,7 +56,7 @@ export default function About() {
         <div>This website is open source!</div>
         <div>
           <Link href="https://github.com/mewfree/damien-personal-blog">
-            <a className="font-semibold text-indigo-600 dark:text-indigo-400 no-underline hover:text-black dark:hover:text-indigo-200">
+            <a className="font-semibold">
               👀 You can look at its source code here
             </a>
           </Link>

@@ -48,7 +48,7 @@ export default function Post({ content, excerpt, frontmatter }) {
         <h1 className="text-4xl font-bold text-center">{frontmatter.title}</h1>
         <div className="text-center">written on {frontmatter.date}</div>
       </div>
-      <article className="prose prose-sm prose-indigo max-w-none">
+      <article className="prose prose-sm prose-indigo dark:prose-dark max-w-none">
         <ReactMarkdown
           escapeHtml={false}
           source={content}
@@ -59,12 +59,12 @@ export default function Post({ content, excerpt, frontmatter }) {
         <div className="text-center"><MailchimpForm /></div>
         <div className="mb-4">
           <Link href="/blog">
-            <a className="font-semibold text-indigo-600 no-underline hover:text-black">
+            <a className="font-semibold">
               {"<< Go back to all articles"}
             </a>
           </Link>
         </div>
-        <div className="text-center">{frontmatter.tags.map(tag => <span className="text-xs bg-gray-200 rounded mx-2 p-1" key={tag}>{tag}</span>)}</div>
+        <div className="text-center">{frontmatter.tags.map(tag => <span className="text-xs bg-gray-200 dark:bg-indigo-100 text-black rounded mx-2 p-1" key={tag}>{tag}</span>)}</div>
         <div className="text-center mt-4">Damien Gonot, {frontmatter.year}</div>
       </footer>
     </Layout>

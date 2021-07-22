@@ -1,6 +1,6 @@
 export default function Job(props) {
   return (
-    <div className="flex flex-col md:flex-row items-center gap-x-4 bg-indigo-100 rounded-md p-2">
+    <div className="flex flex-col md:flex-row items-center gap-x-4 bg-indigo-100 dark:bg-indigo-800 rounded-md p-2">
       <div className="flex flex-row md:flex-col gap-x-2 font-semibold flex-shrink-0">
         <div>{props.dateFrom}</div>
         <div>—</div>

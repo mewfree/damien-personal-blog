@@ -19,7 +19,7 @@ export default function Resume() {
       <div className="pl-4 mt-4">
         <div className="text-center mb-4">
           <Link href="/damiengonot_resume.pdf">
-            <a className="text-xl font-semibold text-indigo-600 hover:text-black">
+            <a className="text-xl font-semibold">
               Download as a PDF
             </a>
           </Link>
@@ -126,7 +126,7 @@ export default function Resume() {
         <div className="text-2xl font-bold mt-4">
           Skills & Interests
         </div>
-        <div className="bg-indigo-100 rounded-md p-2">
+        <div className="bg-indigo-100 dark:bg-indigo-800 rounded-md p-2">
           <ul className="list-disc list-inside">
             <li>
               Google Ads (including Google Ads Scripts & Google Ads API), Facebook Ads (including Facebook Marketing API), Twitter Ads, Snap Ads, Apple Search Ads, TikTok Ads
@@ -151,7 +151,7 @@ export default function Resume() {
         <div className="text-2xl font-bold mt-4">
           Languages
         </div>
-        <div className="bg-indigo-100 rounded-md p-2">
+        <div className="bg-indigo-100 dark:bg-indigo-800 rounded-md p-2">
           <ul className="list-disc list-inside">
             <li>
               French (native)

@@ -42,7 +42,7 @@ export default function About() {
       <div className="pl-4">
         <div className="text-xl font-bold">Hardware</div>
         <div>💻 What my main machine is: MacBook Pro 13-inch</div>
-        <div>⌨️ What I type on: HHKB Pro 2 (Planck EZ soon 🙏)</div>
+        <div>⌨️ What I type on: HHKB Pro 2</div>
         <div>🖱 What I use to point to things: Roccat Kone XTD</div>
         <div className="text-xl font-bold mt-4">Software</div>
         <div>✍️ How I program: Emacs (with evil-mode)</div>

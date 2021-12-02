@@ -186,7 +186,7 @@ julia> readdlm("test_input", Int) |> vec |> v->map(x -> x > 0, diff(v)) |> sum
 ```
 
 # Part 2 Solution
-Not much evolution here, but we're going to benefit from everything in part 1.
+Not much evolution here, but we're going to benefit from everything we learnt in part 1.
 
 We need to create sliding windows of size 3. I didn't feel like implement it myself as I don't enjoy reinventing the wheel, so looked around for an available method.
 

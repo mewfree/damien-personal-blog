@@ -7,9 +7,9 @@ tags: ["advent of code", "2021", "julia", "functional programming"]
 # Introduction
 Inspired by the [many](https://www.swyx.io/learn-in-public/) [articles](https://medium.com/my-learning-journal/why-you-should-learn-in-public-4fd3a6239549) about learning in public, I decided to write a blog post about my learnings for the first day of Advent of Code 2021.
 
-Every year, I'm looking forward to participating in [Advent of Code](https://adventofcode.com/). Those daily puzzles are super delightful and it's so rewarding to get a working solution. Though with the rising difficulty it's very hard to nail every challenge all the way to the end but hey at least I've worked on Day 1!
+Every year, I'm looking forward to participate in [Advent of Code](https://adventofcode.com/). Those daily puzzles are super delightful and it's so rewarding to get a working solution. Though with the rising difficulty it's very hard to nail every challenge all the way to the end but hey at least I've worked on Day 1!
 
-This year, like [last year](https://github.com/mewfree/advent-of-meow-2020), I decided to use [Julia](https://julialang.org/). I like to describe it as "As simple as Python, as fast as C", but there are some features that I really like (a fast and awesome REPL, pipes (`|>`), vectorized functions...).
+This year, like [last year](https://github.com/mewfree/advent-of-meow-2020), I decided to use [Julia](https://julialang.org/). I like to describe it as "As simple as Python, as fast as C", but there are also some features that I really like (a fast and awesome REPL, pipes (`|>`), vectorized functions...).
 
 # Parsing Input
 Parsing input is the first step in solving an Advent of Code puzzle.

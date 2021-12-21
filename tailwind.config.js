@@ -1,5 +1,5 @@
 module.exports = {
-  purge: [
+  content: [
     "./components/*.js",
     "./pages/**/*.js",
   ],
@@ -32,11 +32,6 @@ module.exports = {
           },
         },
       }),
-    },
-  },
-  variants: {
-    extend: {
-      typography: ['dark'],
     },
   },
   plugins: [

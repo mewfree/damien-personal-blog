@@ -45,7 +45,7 @@ export default function About() {
         <div>⌨️ What I type on: HHKB Pro 2</div>
         <div>🖱 What I use to point to things: Roccat Kone XTD</div>
         <div className="text-xl font-bold mt-4">Software</div>
-        <div>✍️ How I program: Emacs (with evil-mode)</div>
+        <div>✍️ How I program: GNU Emacs (with evil-mode)</div>
         <div>🧠 How I organize most stuff: org-mode</div>
         <div>🧑‍🌾 How I run shell commands: kitty + tmux + zsh</div>
       </div>

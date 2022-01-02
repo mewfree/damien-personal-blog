@@ -1,9 +1,3 @@
--- Make highest level h2 since article title is h1
-function Header(el)
-  el.level = el.level + 1
-  return el
-end
-
 -- Intermediate store for variables and their values
 local variables = {}
 

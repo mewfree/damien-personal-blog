@@ -4,7 +4,7 @@ date: 2018-04-20
 tags: ["adwords", "scripts", "adwords scripts", "automatically", "programmatically", "create entities", "create ad groups", "create keywords", "create ads"]
 ---
 
-## How to create entities from Google Ads scripts
+# How to create entities from Google Ads scripts
 Today I'm going to introduce a new concept from Google Ads scripts: `Builders`!
 For reasons unknown to me, builders are available for ad groups, keywords and ads but not campaigns...
 Though I might share a few tricks with you later on how to circumvent that 😉.
@@ -13,7 +13,7 @@ __For the purpose of this tutorial, let's say we own bike repair shops in every 
 
 Let's start off with a new script. I'll personally call it "new US cities".
 
-## Building the ad groups
+# Building the ad groups
 To create a new ad group, you need to first select a campaign. Campaigns can be selected by ID or by campaign name.
 
 I went ahead and manually created a new search campaign called `united_states-cities` as Google Ads won't allow us to create a campaign through Google Ads scripts yet. You can also use an existing campaign.
@@ -86,9 +86,9 @@ We'd probably want to create an ad group for each of those cities:
 Now, that is all fine and dandy, but if you like standardization like me, you'll want to have ad groups that are more computer-readable, so for example, having `new_york_city` instead of `New York City` as an ad group name. We can simply lowercase the name and replace spaces with underscores (`city.toLowerCase().replace(/ /g, '_')`).
 ![ad group builder cities preview](/images/ag_builder_cities_preview.png)
 
-## 🙌
+# 🙌
 
-## Adding keywords to our ad groups
+# Adding keywords to our ad groups
 Keywords are built using the same technique as ad groups but with some specificities as keywords also hold a bid (usually CPC) and a URL if not set at the ad level.
 ```javascript
  var keywordOperation = adGroup.newKeywordBuilder()
@@ -151,11 +151,11 @@ Now take a look at the preview results.
 
 ![keyword builder preview](/images/kw_builder_preview.png)
 
-## 😍
+# 😍
 
 Improvements on this part of the script would be to include more keywords (like "bicycle shop" instead of only "bike shop") as well as adding phrase match keywords & exact match keywords but you should be able to figure it out 😉. Remember that Google Ads can infer the match type through the keyword text, for example: `"bike repair shop chicago"` is a phrase match keyword and `[bike repair shop chicago]` is an exact match keyword so you only need to prepend and append either double quotes or square brackets around our keyword text template and that's it!
 
-## Every ad campaign needs... Expanded Text Ads
+# Every ad campaign needs... Expanded Text Ads
 You know the drill now! Expanded text ads have their own builder:
 ```javascript
  var adOperation = adGroup.newAd().expandedTextAdBuilder()
@@ -229,12 +229,12 @@ function main() {
 
 Go ahead and run it after making sure no errors occur during the preview.
 
-## Results
+# Results
 
-### Keywords list:
+## Keywords list:
 ![keywords result](/images/keywords_result.png)
 
-### Ads list:
+## Ads list:
 ![ads_result.png](/images/ads_result.png)
 
 Pretty amazing that we created these ads automatically. It would be little to no effort to scale them to include any number of cities! Last step is to unpause your ad groups whenever you're ready to launch 🚀.

@@ -6,8 +6,8 @@ tags: ["google ads", "adwords", "scripts", "google ads scripts", "adwords script
 
 Today we'll learn one of the most powerful tools of Google Ads scripts: being able to read/write data to and from Google Spreadsheets. It is definitely one of my favourite features and I am really excited to share this with you.
 
-## How to read Google Spreadsheets data from Google Ads scripts
-### Opening our spreadsheet
+# How to read Google Spreadsheets data from Google Ads scripts
+## Opening our spreadsheet
 The first step in reading Google Spreadsheets data is to choose which Spreadsheet we want to work from 🙂.
 Hopefully, you already have a specific project/sheet in mind.
 
@@ -34,7 +34,7 @@ If you run or preview this in Google Ads scripts, you'll notice we have to give 
 After this is done, you should be able to see your spreadsheet's name in the logs.
 ![Spreadsheet name log](/images/spreadsheet_name_log.png)
 
-### Selecting a sheet
+## Selecting a sheet
 Spreadsheets can hold multiples sheets. We can select a sheet either by its name (`spreadsheet.getSheetByName('sheet_name')`) or its position (`spreadsheet.getSheets()[0]` for the first sheet, `spreadsheet.getSheets()[1]` for the second sheet...).
 
 I'll use `.getSheetByName()` so that my script still works even if I re-order the sheets.
@@ -54,7 +54,7 @@ function main() {
 
 This should log `read` as it is the sheet we selected and are currently working on 👍.
 
-### Reading values
+## Reading values
 Once again, we're offered many possibilities here!
 
 A pretty straightforward solution is to use `sheet.getSheetValues(startRow, startColumn, numRows, numColumns)`. Keep in mind sheets rows and columns index start at 1. A value of -1 means it is the last row or column with data. Therefore getting the values for an entire sheet would be done this way: `sheet.getSheetValues(1, 1, -1, -1)`.
@@ -65,7 +65,7 @@ Another solution is to use `.getRange()` followed by `.getValues()` for a grid s
 - `.getRange(row, column, numRows)`: for a "vertical" selection. Example: `sheet.getRange(2, 1, 4).getValues()` to get the values of the first column, starting from the second row, up until row 5.
 - `.getRange(row, column, numRows, numColumns)`: same principle as for `.getSheetValues`.
 
-### Real-life example
+## Real-life example
 Remember my fake bike repair shops from the [Programmatically Create Ads](/blog/adwords-scripts-create-ads) article?
 
 I hardcoded the list of shops/cities inside the script but now we'd be able to read that data directly from a spreadsheet!
@@ -118,7 +118,7 @@ Philadelphia
 
 Amazing! Now it would be possible to combine this script and the one from my [Programmatically Create Ads](/blog/adwords-scripts-create-ads) article to automatically create ads based on spreadsheet data!
 
-## How to write data from Google Ads scripts to Google Spreadsheets
+# How to write data from Google Ads scripts to Google Spreadsheets
 I'm going to re-use knowledge from [Google Ads Scripts: Reading Data](/blog/adwords-scripts-reading-data) to read ad group data from a specific campaign and write it to our [example spreadsheet](https://docs.google.com/spreadsheets/d/1ARKwW_kAf8rJJ9_XP4kl__kc56inghZdBtNrClfRlvc/edit).
 
 Let's put all of that data in an array first. We can iterate over the array and push every ad group name and ID in the array. I initiated the data array with column headers.
@@ -167,7 +167,7 @@ Result:
 
 This is from a paused campaign so every stat is at 0 but you should see your real-life numbers. Our data is now well structured. The last step is to write the data in the sheet by adding `.setValues()` at the end.
 
-### Final script
+## Final script
 ```javascript
 function main() {
   var spreadsheet = SpreadsheetApp.openByUrl(
@@ -211,7 +211,7 @@ I'm using the length of the array and the length of the first element of the arr
 
 Just a warning that previewing the script will actually write the data in the spreadsheet! So be careful.
 
-### Spreadsheet Result
+## Spreadsheet Result
 ![write sheet result](/images/write_sheet_result.png)
 
 This is really useful if you're interested in having your own custom dashboard right in Google Spreadsheets. If you want to have this data updated automatically every day, I would suggest turning on daily updates through Google Ads scripts' frequency feature available on the Google Ads scripts homepage:

@@ -4,13 +4,13 @@ date: 2020-01-21
 tags: ["facebook", "marketing", "api", "insights", "martech"]
 ---
 
-## Introduction
+# Introduction
 Welcome to the first article published in 2020! Friendly reminder that this is the second part of a guide around how to use Facebook Insights API with Python so if you haven't seen [Guide to Facebook Insights API](/blog/guide-facebook-insights-api) (Part 1) yet I would suggest to read it first.
 
 Some of the more advanced features of Facebook Insights API weren't covered in Part 1 so here is the rest!
 
-## Advanced queries to the Facebook Insights API
-### Level
+# Advanced queries to the Facebook Insights API
+## Level
 In the [previous article](/blog/guide-facebook-insights-api), we saw how to get results for an ad account, campaign, ad set, etc... But the results were only for the total sum of that entity. What if you want to access your entire account results, but detailed by campaign or even ad set?
 
 This is how "level" comes into consideration.
@@ -73,7 +73,7 @@ Result:
 
 As you can see, the results don't seem to be sorted in any way. Follow the next section to learn how to sort results.
 
-### Sorting
+## Sorting
 You might have noticed that Facebook results have usually no particular order. Here is how to specify a sort so the JSON result is already sorted when you get the result back from the API.
 
 Here's how to do it:
@@ -82,7 +82,7 @@ Add a `sort` param in your list of params. As it's possible to sort by multiple 
 
 Example: `spend_descending` to sort results by spend, from highest to lowest.
 
-#### Sample Python code:
+### Sample Python code:
 ```python
 (...)
 
@@ -131,7 +131,7 @@ Result:
 
 Results are now sorted by spend, in a descending order (from highest to lowest)!
 
-### Filtering
+## Filtering
 Filtering is constructed through a field (the field or column we'd like to filter on, for example `campaign.name` or `impressions`), an operator (for example `CONTAIN` or `STARTS_WITH` for string fields like entity names, or `GREATER_THAN` // `LESS_THAN` for number fields like impressions) and a value (what we want to filter against, for example "5000" to only get campaigns that have spent over $5,000).
 
 They can be combined into one or multiple objects under the `filtering` parameter.
@@ -158,7 +158,7 @@ The exhaustive list of operators:
 
 Here are a few examples:
 
-##### Filtering by spend
+### Filtering by spend
 ```python
 (...)
 
@@ -197,7 +197,7 @@ Result:
 ```
 ^ Only fetched the campaigns with >$20,000 spend
 
-#### Filtering by campaign name
+### Filtering by campaign name
 ```python
 (...)
 
@@ -239,7 +239,7 @@ Result:
 Note that your intuition might be to use `campaign_name` as a field but if you do so you'll get an error back from Facebook:
 `Filter campaign_name is not valid any more, please use campaign.name instead`.
 
-### Time increment (monthly or daily data)
+## Time increment (monthly or daily data)
 By default, the Facebook Insights API will give the result for the total of the date range (`all_days`).
 
 If you want to have the data for every month or every day (monthly or daily data), you have to use the `time_increment` parameter.
@@ -249,7 +249,7 @@ If you want to have the data for every month or every day (monthly or daily data
 * `monthly`
 * `all_days` (but that's the default)
 
-#### Daily data sample:
+### Daily data sample:
 ```python
 (...)
 
@@ -287,7 +287,7 @@ Results:
 }]
 ```
 
-#### Monthly data sample:
+### Monthly data sample:
 ```python
 (...)
 
@@ -325,7 +325,7 @@ Result:
 }]
 ```
 
-### Breakdowns
+## Breakdowns
 All of this is fine and dandy but what if you want to break down your results by something like publisher platform (Facebook/Instagram/Messenger...), age, country and more?
 
 Once again, one simply needs to add `breakdowns` as a param with a list of breakdown.
@@ -356,7 +356,7 @@ Here is the exhaustive list of available breakdowns:
 
 Only some breakdowns can be combined. To know more about it, please refer to [Facebook's official documentation about combining breakdowns](https://developers.facebook.com/docs/marketing-api/insights/breakdowns#combiningbreakdowns).
 
-#### Age breakdown sample:
+### Age breakdown sample:
 ```python
 (...)
 
@@ -412,7 +412,7 @@ Result:
 }]
 ```
 
-#### Publisher platform breakdown sample:
+### Publisher platform breakdown sample:
 ```python
 (...)
 
@@ -458,7 +458,7 @@ Result:
 }]
 ```
 
-## Conclusion
+# Conclusion
 This is it for today, we've covered most of what's available in Facebook Insights API. Thank you for following along!
 
 Refer to [Facebook's official documentation about Insights](https://developers.facebook.com/docs/marketing-api/reference/ad-account/insights) for full coverage of all options available.

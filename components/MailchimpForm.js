@@ -30,7 +30,6 @@ export default class MailchimpForm extends React.Component {
     const url = `//gmail.us3.list-manage.com/subscribe/post-json?${queryString.stringify(formData)}`;
 
     jsonp(url, { param: "c" }, (err, data) => {
-      console.log(data);
       if (data["result"] == "success") {
         this.setState({
           success: true,

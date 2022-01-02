@@ -5,7 +5,7 @@ tags: ["google", "analytics", "compliance", "gdpr"]
 ---
 
 For legal reasons, this is not legal advice.
-# Introduction
+## Introduction
 Hey there. I hope you're all doing okay.
 
 I've always kept my tracking setup on this blog very minimal. Google Analytics is the only third-party script/tracker that I allow myself to use. I could use [Simple Analytics](https://simpleanalytics.com/) or [Netlify Analytics](https://www.netlify.com/products/analytics/) but they're both paid solutions and since this blog is a hobby project I'd like to keep the cost minimal.
@@ -16,12 +16,12 @@ An additional consequence is that it makes my blog not GDPR-compliant since I do
 
 So let's see if it's possible for Google Analytics not to use any cookies... (spoiler: it's possible and it's really easy)
 
-# How? Tell me!
-## ga.js
+## How? Tell me!
+### ga.js
 If your Google Analytics doesn't set up any cookie, then you don't have to show a cookie consent banner...
 [Insert smart image]
 
-## Google Tag Manager (GTM)
+### Google Tag Manager (GTM)
 Go ahead to Google Tag Manager, select your account.
 
 You should see this:
@@ -33,10 +33,10 @@ Edit Analytics settings by clicking on the card and set field name `storeGac` to
 As you can see, no cookies are set on new visits to [damiengonot.com](https://www.damiengonot.com).
 ![No More Cookies](/images/no_more_cookies.png)
 
-# Any drawbacks?
+## Any drawbacks?
 You won't be able to measure recurring visitors.
 
-# Conclusion
+## Conclusion
 This works if you want an easy solution to not having to show a cookie consent screen/banner to some visitors while still keeping 99% of Google Analytics features.
 
 Do not hesitate to [contact me](/about) with any questions about the article.

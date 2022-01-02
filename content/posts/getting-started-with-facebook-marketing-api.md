@@ -4,12 +4,12 @@ date: 2019-02-20
 tags: ["facebook", "marketing", "api", "facebook marketing api", "martech"]
 ---
 
-# What is Facebook Marketing API?
+## What is Facebook Marketing API?
 Facebook Marketing API is a way to automatically create, read, modify and delete campaigns, ad sets, ads, creatives & more on Facebook's advertising platform, which covers Facebook "feed", Facebook Messenger, Instagram (stories & feed) etc... using your favourite programming language.
 
 [Read more about it on Facebook website](https://developers.facebook.com/docs/marketing-apis/).
 
-# Generating an Access Token
+## Generating an Access Token
 Go to [https://developers.facebook.com/docs/marketing-apis/](https://developers.facebook.com/docs/marketing-apis/) and follow the steps to create a new Ads App. Make sure you select "Implement Marketing API" and "Get Started with the Ads Insights API" as shown below.
 
 ![facebook new app scenario interface](/images/create_new_fb_app.png)
@@ -26,7 +26,7 @@ Navigate to Products > Marketing API > Tools. Select `ads_management` and `ads_r
 
 You will need these credentials throughout this tutorial. Make sure no one else can have access to your access token as it can be used to read, create, modify and delete any ads in your ad accounts.
 
-# Our First Facebook Marketing API Request
+## Our First Facebook Marketing API Request
 A great way to interact with the Facebook Marketing API is through the official [`facebook-python-business-sdk` Python package](https://github.com/facebook/facebook-python-business-sdk). Other similar packages are available for Ruby, Node.js etc... but I will be using Python in this tutorial.
 
 You can install the package by running `pip3 install facebook_business` in a terminal (the package used to be distributed through the name `facebookads` so make sure you're using the newer `facebook_business`). If you don't have experience with `pip`, I suggest you read [the official Python documentation about installing packages](https://packaging.python.org/tutorials/installing-packages/).

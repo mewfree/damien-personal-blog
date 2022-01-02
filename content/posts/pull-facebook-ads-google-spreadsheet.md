@@ -4,7 +4,7 @@ date: 2020-02-02
 tags: ["facebook", "marketing", "api", "insights", "martech", "google spreadsheets", "spreadsheets", "google apps script"]
 ---
 
-# Introduction
+## Introduction
 We all know how much marketers love spreadsheets. They're versatile, allow for quick analyses and no coding is required.
 
 They're also often used as internal dashboards to measure and track the performance of ads.
@@ -13,7 +13,7 @@ But did you know it was possible to use JavaScript to run scripts inside Google 
 
 This is the feature from Google Apps Scripts we're going to use to automatically pull Facebook Ads data directly in our spreadsheets.
 
-# How to Access Google Apps Scripts?
+## How to Access Google Apps Scripts?
 First, let's create a fresh Google Spreadsheet using the handy [sheet.new](https://sheet.new) URL, or navigate to your day-to-day marketing dashboard.
 
 You should see an empty Google Spreadsheet, as below.
@@ -30,8 +30,8 @@ A new browser window should have opened showing Google Apps Script's IDE (code e
 
 Note that Google Apps Scripts does not support ES6 but older versions of JavaScript only.
 
-# Discovering Google Apps Script
-## Hello, World! in Google Apps Script
+## Discovering Google Apps Script
+### Hello, World! in Google Apps Script
 Let's do a quick "Hello, World!" in Google Apps Script.
 
 One of the main differences from vanilla JavaScript is that logging isn't done by `console.log()` but `Logger.log()` instead.
@@ -52,7 +52,7 @@ Go to View > Logs or use the Ctrl/Cmd + Enter shortcut to open the Logs window.
 Congrats, you've run your first Google Apps Script!
 ![Logs Hello World](/images/logs_hello_world_700.png)
 
-## Custom Function Basic Example
+### Custom Function Basic Example
 Let's do a very simple custom function to show how it's possible to create our own personal functions in Google Spreadsheet.
 
 Replace the code in the Google Apps Script code editor to be:
@@ -69,7 +69,7 @@ Hit save 💾 and try your new spreadsheet function:
 
 Congrats, you've just augmented your Spreadsheet with the power of JavaScript!
 
-## How to make HTTP(S) request
+### How to make HTTP(S) request
 Now let's get to serious business: making external API calls.
 
 We'll be using [UrlFetchApp](https://developers.google.com/apps-script/reference/url-fetch/url-fetch-app) from Google Apps Script.
@@ -98,8 +98,8 @@ As you can see above, we've got the full HTML response of a GET query to `exampl
 
 Let's do the real thing using Facebook Insights API.
 
-# Querying Facebook Insights API
-## Authenticating
+## Querying Facebook Insights API
+### Authenticating
 Facebook Marketing API needs a way to authenticate yourself so that you and only you can access your data.
 
 You will need to get an access token. You can read my article [Getting Started with Facebook Marketing API](/blog/getting-started-with-facebook-marketing-api) to learn how to get one.
@@ -136,7 +136,7 @@ A `run()` function is needed to wrap the `FBInsights()` function to be able to r
 Open Logs and you should see data for your entity from yesterday.
 ![Yesterday Logs](/images/yesterday_logs.png)
 
-## Query With Custom Dates
+### Query With Custom Dates
 Let's tweak our existing script in order to be able to use a custom date:
 
 ```javascript
@@ -164,7 +164,7 @@ Facebooks Insights API uses an object in the format of `{'since': YYYY-MM-DD, 'u
 
 By using the same date in `since` and `until` we're getting the results for that one day.
 
-## Select Field
+### Select Field
 ```javascript
 function FBInsights(entity_id, date, field) {
   var access_token = 'REPLACE_BY_YOUR_ACCESS_TOKEN';
@@ -191,7 +191,7 @@ This adds `field` as a function parameter, adds the necessary query parameter in
 
 To know more about all possible fields, please refer to my [Guide to Facebook Insights API](/blog/guide-facebook-insights-api).
 
-# Final demo
+## Final demo
 You can now use `=FBInsights("entity_id", TEXT("date", "yyyy-mm-dd"), "field_name")` in your Spreadsheets! `=TEXT()` is useful to convert any date into the `YYYY-MM-DD` format required by Facebook.
 
 Here is an example to retrieve spend for dates in column A. Formula I'm using in the example below: `=FBInsights("REPLACE_BY_YOUR_ENTITY_ID", TEXT(A2, "yyyy-mm-dd"), "spend")`
@@ -202,7 +202,7 @@ Now try it yourself with different fields (clicks, impressions...)!
 
 PS: For the purpose of this article I added `* Math.random()` in my return statement to multiply my spend numbers by a random number in order to obfuscate what my real spend data is.
 
-# Conclusion
+## Conclusion
 Not only have you learnt how to create your own personal Google Spreadsheet function, but you've also learnt how to query Facebook's Marketing API & Insights API. Combining the two allows you to query your Facebook Ads data directly from Google Spreadsheet.
 
 If you would like to do something similar with Google Ads data, please go read [Connecting Google Ads Scripts with Google Spreadsheets](/blog/adwords-google-spreadsheets).

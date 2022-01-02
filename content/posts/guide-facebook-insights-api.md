@@ -4,7 +4,7 @@ date: 2019-07-14
 tags: ["facebook", "marketing", "api", "insights", "martech"]
 ---
 
-# What is the Facebook Insights API?
+## What is the Facebook Insights API?
 The Facebook Insights API is what allows us to query results from the Facebook Marketing platform.
 It basically includes any kind of statistic that you can find in the Facebook's Ads Manager.
 
@@ -12,8 +12,8 @@ Following [Getting Started with Facebook Marketing API](/blog/getting-started-wi
 
 Note: I will be replacing confidential information with asterisks (`*`) in the code samples below.
 
-# Basic data fetching
-## Account-level data fetching
+## Basic data fetching
+### Account-level data fetching
 The most basic way to get "insights" from the Facebook API looks like this:
 ```python
 from facebook_business.api import FacebookAdsApi
@@ -47,7 +47,7 @@ Result:
 Also note that the highest level of insights one can get from the Facebook API is at the account level.
 If you manage multiple accounts and would like to aggregate the spend among all accounts, you'll have to query every account manually and sum it up yourself.
 
-## Other level data fetching
+### Other level data fetching
 Getting campaign-level insights instead is really easy. We simply need to swap the `AdAccount` ad object for `Campaign`.
 ```python
 from facebook_business.api import FacebookAdsApi
@@ -80,11 +80,11 @@ Notice how the `campaign_id` is now mentioned in the result.
 
 For ad set level and ad level data, import `AdSet` or `Ad` from `facebook_business.adobjects.adset` and `facebook_business.adobjects.ad` respectively and use `AdSet(<AdSetID>).get_insights()` or `Ad(<AdID>).get_insights()` to fetch your insights.
 
-# Customizing date ranges, fields, sorting and more
+## Customizing date ranges, fields, sorting and more
 The queries listed above are fine but you probably want to get data from specific time ranges and for particular fields! This is what we'll cover in this section.
 
-## Customizing the date range
-### Using date presets
+### Customizing the date range
+#### Using date presets
 Facebook offers a long list of different date presets that should cover a lot of use cases:
 - `today`
 - `yesterday`
@@ -119,7 +119,7 @@ print(insights)
 
 The results will now only include data from the last 7 days 😊
 
-### Using a time range
+#### Using a time range
 If you want data from a specific time range not included in the presets above, you can also use a `since` date and an `until` date, with dates in the YYYY-MM-DD format.
 
 ```python
@@ -143,8 +143,8 @@ You can confirm the query is working as the result includes a `date_start` and `
 }]
 ```
 
-## Customizing the fields
-### Common fields
+### Customizing the fields
+#### Common fields
 In the same manner that we can pass different parameters to the `get_insights()` query, we can pass `fields` which is a list of the different fields we want to get from the Facebook Insights API. A complete list can be found in the [Facebook's official documentation about parameters and fields](https://developers.facebook.com/docs/marketing-api/insights/parameters). Here is an example with common fields most marketers would like to get:
 
 ```python
@@ -182,7 +182,7 @@ And the result now includes the additional fields:
 }]
 ```
 
-### Actions / Conversions and Cost per Action (CPA)
+#### Actions / Conversions and Cost per Action (CPA)
 Getting conversion data is a bit weird using Facebook Insights API, you have to include `actions` in the list of fields and it will return the entire list of actions that Facebook tracks. Here is an example:
 ```python
 (...)

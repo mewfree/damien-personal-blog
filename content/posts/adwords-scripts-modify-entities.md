@@ -4,7 +4,7 @@ date: 2018-03-31
 tags: ["google ads", "adwords", "scripts", "google ads scripts", "adwords scripts", "modify entities", "modify", "entities"]
 ---
 
-# How to modify entities from Google Ads scripts?
+## How to modify entities from Google Ads scripts?
 In the [Google Ads Scripts: Reading Data](/blog/adwords-scripts-reading-data), we saw how to read data in Google Ads Script.
 Now we'll see how to take actions and modify ad entities (ad groups, keywords, ads...).
 For example, this would allow us to automate the recurring optimization we might be doing every day, every week or every month.
@@ -16,13 +16,13 @@ Here are a few examples:
 
 We are going to implement a slightly different version of the first example.
 
-# Raising bids on specific keywords
+## Raising bids on specific keywords
 Imagine we have big pockets and want to stay in position 2 or better at all times for all keywords.
 First, we'll need to find all keywords with an average position (avg. pos.) worse than 2.
 This should be easy to do thanks to what we've learnt in the [previous tutorial](/blog/adwords-scripts-reading-data).
 Then, we'll raise the bids on those keywords by an arbitrary amount (+10%) in order to try to raise the avg. pos. to 2 or better.
 
-## Fetching keywords with a specific average position
+### Fetching keywords with a specific average position
 In order to combine the `.withCondition()` method with a statistic (like `Average Position`) we have to precise a date range with `.forDateRange()`.
 Google Ads provide a few ready-to-use ranges such as `YESTERDAY`, `LAST_7_DAYS`, `LAST_30_DAYS`...
 The complete list of ranges can be found [here](https://developers.google.com/adwords/scripts/docs/reference/adwordsapp/adwordsapp_keywordselector#forDateRange_2).
@@ -64,7 +64,7 @@ function main() {
 Now, I commented out the `keyword.getText()` log in order to protect the private information of the client I was trying this script on, but we can see that all the keywords have indeed an avg. pos. of 2 or worse:
 ![keywords_avg_pos](/images/keywords_avg_pos.png)
 
-## Raising max CPCs on keywords
+### Raising max CPCs on keywords
 Let's take care of the bids now! It's pretty straightforward to do so by using `.bidding().setCpc()` on the `keyword` entity, but first, we need to get the current max CPC to calculate the new bid (remember we want to raise the bids by 10%). This is done by using `.bidding().getCpc()`. With all this knowledge, final formula is very simple:
 ```javascript
   var new_bid = keyword.bidding().getCpc() * 1.1;

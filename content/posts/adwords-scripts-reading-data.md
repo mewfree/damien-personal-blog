@@ -4,10 +4,10 @@ date: 2018-03-22
 tags: ["adwords", "scripts", "adwords scripts", "reading data", "data", "reading"]
 ---
 
-## How to read data from Google Ads scripts?
+# How to read data from Google Ads scripts?
 In the [Brief Introduction to Google Ads Scripts](/blog/brief-introduction-to-adwords-scripts), we saw how to create our first Google Ads script. Now we'll try to do something useful with it. One of the first steps is to learn how to read campaigns data from Google Ads scripts.
 
-### Getting a list of running campaigns
+## Getting a list of running campaigns
 To get a list of campaigns, we'll use [`AdsApp.CampaignSelector`](https://developers.google.com/adwords/scripts/docs/reference/adwordsapp/adwordsapp_campaignselector). As a very basic first example, we'll try to fetch all of our *running* campaigns.
 
 First of all, to structure our code a bit, we'll create a function outside of `main()`. We can call it `getAllActiveCampaigns()` and declare it that way: `function getAllActiveCampaigns() {}`. Remember that only what's inside `main()` will run, so we'll have to call `getAllActiveCampaigns()` inside it later but we'll omit it for now.
@@ -78,7 +78,7 @@ In the Google Ads scripts interface, your *running* campaigns and with their res
 
 (Obviously, your own results will differ from mine 😊).
 
-### Getting a list of ad groups
+## Getting a list of ad groups
 From what we've just learnt with how to read campaigns above, getting a list of ad groups will be really easy. We only need to switch `AdsApp.campaigns()` with `AdsApp.adGroups()` as well as some variables' names.
 ```javascript
 function getAllAdGroups() {
@@ -96,7 +96,7 @@ function getAllAdGroups() {
 As budgets are placed on a campaign level, you would get an error trying to run `adGroup.getBudget()` so I simply ommited it here.
 ![Ad groups result](/images/ag_result.png)
 
-### Getting a list of ads inside an ad group
+## Getting a list of ads inside an ad group
 Same thing with ads, we can simply replace `AdsApp.adGroups()` by `AdsApp.ads()`. But let's do things a bit differently this time. Let's get the ads inside a specific ad group.
 
 We can simply select an ad group by its name with `.withCondition()`. `if (adGroup.hasNext()) {}` condition is present in case our "search" didn't result any ad group. After that, we can log the part 1 & part 2 headlines (in the case of Expanded text ads).

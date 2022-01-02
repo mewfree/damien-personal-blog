@@ -5,6 +5,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
+import behead from "remark-behead";
 import SyntaxHighlighter from "react-syntax-highlighter";
 
 import Layout from "../../components/layout";
@@ -25,32 +26,34 @@ export default function Post({ content, excerpt, frontmatter }) {
         <div className="text-center">written on {frontmatter.date}</div>
       </div>
       <article className="prose prose-indigo dark:prose-dark max-w-none">
-        <ReactMarkdown components={{
-          code({node, inline, className, children, ...props}) {
-            const match = /language-(\w+)/.exec(className || '')
-            return !inline && match ? (
-              <SyntaxHighlighter
-                language={match[1]}
-                {...props}
-              >
-                {String(children).replace(/\n$/, '')}
-              </SyntaxHighlighter>
-            ) : (
-              <SyntaxHighlighter
-                language="javascript"
-                PreTag="span"
-                customStyle={{
-                  display: undefined,
-                  padding: undefined,
-                }}
-                wrapLongLines={true}
-                {...props}
-              >
-                {children}
-              </SyntaxHighlighter>
-            )
-          }
-        }}>
+        <ReactMarkdown
+          components={{
+            code({node, inline, className, children, ...props}) {
+              const match = /language-(\w+)/.exec(className || '')
+              return !inline && match ? (
+                <SyntaxHighlighter
+                  language={match[1]}
+                  {...props}
+                >
+                  {String(children).replace(/\n$/, '')}
+                </SyntaxHighlighter>
+              ) : (
+                <SyntaxHighlighter
+                  language="javascript"
+                  PreTag="span"
+                  customStyle={{
+                    display: undefined,
+                    padding: undefined,
+                  }}
+                  wrapLongLines={true}
+                  {...props}
+                >
+                  {children}
+                </SyntaxHighlighter>
+              )
+            }
+          }}
+          remarkPlugins={[[behead, {depth: 1}]]}>
           {content}
         </ReactMarkdown>
       </article>

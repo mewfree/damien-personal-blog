@@ -6,11 +6,11 @@ tags:
 title: Article Toast
 ---
 
-## Introduction
+# Introduction
 
 Just a simple article
 
-## Trying out `org-mode`{.verbatim}
+# Trying out `org-mode`{.verbatim}
 
 This should work with my workflow!
 
@@ -23,6 +23,6 @@ map double [1,2,3]
 [2,4,6]
 ```
 
-## Conclusion
+# Conclusion
 
 There you go!

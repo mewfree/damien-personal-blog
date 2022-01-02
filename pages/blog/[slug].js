@@ -45,7 +45,7 @@ export default function Post({ content, excerpt, frontmatter }) {
         <meta name="og:description" content={excerpt} />
       </Head>
       <div className="mt-4 mb-10">
-        <h1 className="text-4xl font-bold text-center">{frontmatter.title}</h1>
+        <h1 className="text-3xl font-bold text-center">{frontmatter.title}</h1>
         <div className="text-center">written on {frontmatter.date}</div>
       </div>
       <article className="prose prose-sm prose-indigo dark:prose-dark max-w-none">

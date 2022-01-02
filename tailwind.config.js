@@ -3,7 +3,7 @@ module.exports = {
     "./components/*.js",
     "./pages/**/*.js",
   ],
-  darkMode: 'class',
+  darkMode: "class",
   theme: {
     extend: {
       typography: (theme) => ({
@@ -18,15 +18,15 @@ module.exports = {
         },
         dark: {
           css: {
-            color: 'white',
-            'h1,h2,h3,h4': {
-              color: 'white',
+            color: "white",
+            "h1,h2,h3,h4,h5,h6": {
+              color: "white",
             },
             strong: {
-              color: 'white',
+              color: "white",
             },
             a: {
-              color: theme('colors.indigo.400'),
+              color: theme("colors.indigo.400"),
             },
           },
         },

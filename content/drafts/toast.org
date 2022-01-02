@@ -5,7 +5,7 @@
 * Introduction
 Just a simple article
 
-* Trying out =org-mode=
+* Trying out ~org-mode~!
 This should work with my workflow!
 
 #+begin_src haskell :results verbatim :exports both

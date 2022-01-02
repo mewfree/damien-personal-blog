@@ -32,3 +32,8 @@ function Meta(meta)
 
   return meta
 end
+
+-- Only use keep language from code blocks and not other metadata
+function CodeBlock(el)
+  return pandoc.CodeBlock(el.text, {class = el.attr.classes[1]})
+end

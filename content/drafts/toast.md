@@ -10,11 +10,11 @@ title: Article Toast
 
 Just a simple article
 
-# Trying out `org-mode`{.verbatim}
+# Trying out `org-mode`!
 
 This should work with my workflow!
 
-``` {.haskell results="verbatim" exports="both"}
+``` haskell
 double x = x*2
 map double [1,2,3]
 ```

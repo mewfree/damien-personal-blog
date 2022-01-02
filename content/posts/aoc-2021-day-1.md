@@ -4,19 +4,19 @@ date: 2021-12-01
 tags: ["advent of code", "2021", "julia", "functional programming"]
 ---
 
-# Introduction
+## Introduction
 Inspired by the [many](https://www.swyx.io/learn-in-public/) [articles](https://medium.com/my-learning-journal/why-you-should-learn-in-public-4fd3a6239549) about learning in public, I decided to write a blog post about my learnings for the first day of Advent of Code 2021.
 
 Every year, I'm looking forward to participate in [Advent of Code](https://adventofcode.com/). Those daily puzzles are super delightful and it's so rewarding to get a working solution. Though with the rising difficulty it's very hard to nail every challenge all the way to the end but hey at least I've worked on Day 1!
 
 This year, like [last year](https://github.com/mewfree/advent-of-meow-2020), I decided to use [Julia](https://julialang.org/). I like to describe it as "As simple as Python, as fast as C", but there are also some features that I really like (a fast and awesome REPL, pipes (`|>`), vectorized functions...).
 
-# Parsing Input
+## Parsing Input
 Parsing input is the first step in solving an Advent of Code puzzle.
 
 My biggest tip about Advent of Code is to test your code against the public (I personally save it in a file `test_input` next to my real, private `input` file).
 
-## Initial Method
+### Initial Method
 By solving [last year's Advent of Code](https://github.com/mewfree/advent-of-meow-2020) in Julia too, I remembered [the method I was using](https://github.com/mewfree/advent-of-meow-2020/blob/main/day-01/solution.jl#L1), which is essentially:
 - read file as a string
 - split by newline
@@ -28,7 +28,7 @@ input = open(f->read(f, String), "test_input") |> f->split(f, "\n") |> a->map(s-
 
 But I was not satisfied with it and kept feeling like there must be a better way...
 
-## Cleaner Method
+### Cleaner Method
 After some research that's how I found out about [Delimited Files](https://docs.julialang.org/en/v1/stdlib/DelimitedFiles/), part of Julia's standard library!
 More specifically, the `readdlm` method that allows to read a file as a matrix while also handling parsing to integers or floats at the same time.
 
@@ -65,8 +65,8 @@ julia> input = readdlm("test_input", Int) |> vec
  263
 ```
 
-# Part 1 Solution
-## Map -> Reduce
+## Part 1 Solution
+### Map -> Reduce
 Alright, now to the good stuff. I won't go over [Day 1's puzzle](https://adventofcode.com/2021/day/1) here, I would recommed you go through it yourself first!
 We want to know whether element `n` is lesser than element `n+1`, or actually whether element `n` is greater than element `n-1`.
 My first guess is to `map` over the input, using `enumerate` to get the index of the `n`th element, and using that to compare it to the `n-1`th element. A quick [ternary operator](https://docs.julialang.org/en/v1/manual/control-flow/#man-conditional-evaluation) is necessary to handle the case of the first element.
@@ -92,7 +92,7 @@ julia> reduce(+, map(x -> x[1] - 1 == 0 ? false : x[2] > input[x[1] - 1], enumer
 7
 ```
 
-## Zip -> Map -> Sum
+### Zip -> Map -> Sum
 By sharing my first solution with my colleagues and reviewing others, I quickly got two feedback:
 - `reduce` is not necessary and a simple `sum` should work
 - `zip` can be very useful! (I always forget about `zip`...)
@@ -137,7 +137,7 @@ julia> map(((x, y),) -> x < y, zip(input, input[2:end])) |> sum
 7
 ```
 
-## Diff
+### Diff
 I was pretty satisfied with this solution, but as I looked around the amazing [/r/adventofcode](https://www.reddit.com/r/adventofcode/)'s [solution megathread](https://www.reddit.com/r/adventofcode/comments/r66vow/2021_day_1_solutions/), I saw someone using a simply `diff` function in R.
 
 And to my pleasant surprise, Julia has [a `diff` function](https://docs.julialang.org/en/v1/base/arrays/#Base.diff) too!
@@ -178,14 +178,14 @@ julia> map(x -> x > 0, diff(input)) |> sum
 7
 ```
 
-## Final Solution
+### Final Solution
 To recap, this gives us a one-liner:
 ```julia
 julia> readdlm("test_input", Int) |> vec |> v->map(x -> x > 0, diff(v)) |> sum
 7
 ```
 
-# Part 2 Solution
+## Part 2 Solution
 Not much evolution here, but we're going to benefit from everything we learnt in part 1.
 
 We need to create sliding windows of size 3. I didn't feel like implement it myself as I don't enjoy reinventing the wheel, so looked around for an available method.
@@ -230,7 +230,7 @@ julia> readdlm("test_input", Int) |> vec |> Transducers.Partition(3; step = 1) |
 5
 ```
 
-# Conclusion
+## Conclusion
 Here's the full script that is [available on GitHub](https://github.com/mewfree/advent-of-meow-2021/blob/main/day-01/solution.jl):
 ```julia
 using DelimitedFiles

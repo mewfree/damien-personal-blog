@@ -4,12 +4,12 @@ date: 2020-05-20
 tags: ["email", "marketing", "google", "sheets", "spreadsheet"]
 ---
 
-# Introduction
+## Introduction
 Did you know it was possible to send free emails directly from Google Spreadsheets?
 
 Whether you're a small business owner looking to send updates about your product to your user base, a marketer looking for a free newsletter solution or a startup looking to bootstrap your sales emails without an expensive CRM, this article is made for you.
 
-# Spreadsheet Setup
+## Spreadsheet Setup
 [Here is a sample sheet I'll use as an example](https://docs.google.com/spreadsheets/d/1Jg9fIoUMBI75eDGbEJGevcU2HHH59hTlK-v0k_A8Al4/edit?usp=sharing).
 
 ![Spreadsheet Sample](/images/spreadsheet_sample.png)
@@ -31,7 +31,7 @@ Similar thing in __Column E__ with a twist: it would be a bit boring to have our
 
 Replace columns D & E with the real text you wish to send.
 
-# Drafting Emails
+## Drafting Emails
 You can read more about setting up a Google Apps Script project from a spreadsheet in the "How to Access Google Apps Scripts?" section of my previous article [How to Automatically Pull Facebook Ads Data in Google Spreadsheet?](/blog/pull-facebook-ads-google-spreadsheet).
 
 In the __Tools > Script Editor__ section, copy & paste:
@@ -73,7 +73,7 @@ Head over to the [drafts section of your Gmail account](https://mail.google.com/
 
 Congrats! You've automatically generated email drafts.
 
-# Sending Emails
+## Sending Emails
 That's actually the easy part!
 
 You could send them manually from the Gmail interface but that's not very fun...
@@ -96,7 +96,7 @@ function run() {
 }
 ```
 
-# Conclusion
+## Conclusion
 I hope you've enjoyed this small Google Spreadsheet hack, possible with only 10 lines of code! There are many cool things you could do with this, but please don't abuse it 🙏.
 
 Do not hesitate to [contact me](/about) with any questions about the article.

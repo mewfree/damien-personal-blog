@@ -4,26 +4,26 @@ date: 2018-03-08
 tags: ["google ads", "adwords", "scripts", "google ads scripts", "adwords scripts", "introduction"]
 ---
 
-# What are Google Ads scripts?
+## What are Google Ads scripts?
 Google Ads scripts is a way to automate Google Ads campaigns by using a slightly modified version of JavaScript to read, create, update and delete Google Ads "entities" (campaigns, ad groups, keywords, ads...). Google Ads scripts are hosted directly inside Google Ads and you don't need a server to run them, Google Ads takes care of everything for you.
 
 Let's create our first Google Ads script now!
 
-## How to access it?
-### Using the new Google Ads interface
+### How to access it?
+#### Using the new Google Ads interface
 The easiest way is to take advantage of Google Ads' new shortcut feature: by typing <kbd>gt</kbd> anywhere in the interface. After the search prompt appears, simply search for "scripts" and press <kbd>Enter</kbd>.
 ![Result of gt script](/images/gt_script.png)
 
 Or going through the actual interface menus, click on the wrench icon in the top-right corner and you'll find "Scripts" in the "Bulk actions" section.
 ![Actual interface](/images/full_interface_scripts.png)
 
-### Using the old Google Ads interface
+#### Using the old Google Ads interface
 If you're not using the new Google Ads interface, you can find Scripts in the left-hand side menu under the "Bulk operations" section.
 ![Old interface](/images/old_interface_scripts.png)
 
 I'll use the newer Google Ads interface out of convenience for the rest of the tutorial.
 
-# Our first Google Ads script
+## Our first Google Ads script
 If you've never used Google Ads scripts before, your list of scripts should be empty. You can create a first one by clicking on the big circled "+" button.
 ![Circled plus button](/images/creating_first_script.png)
 This is what you should see:

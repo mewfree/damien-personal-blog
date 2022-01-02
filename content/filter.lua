@@ -15,12 +15,12 @@ function RawBlock(el)
   -- Extract variable name and value
   local name, value = el.text:match '#%+(%w+):%s*(.+)$'
   if name and value then
+    -- Special behaviour for tags: split by comma and add to list
     if name == 'tags' then
       local tags = {}
       for tag in string.gmatch(value, '([^,]+)') do
         tags[#tags + 1] = tag
       end
-
       variables[name] = tags
     else
       variables[name] = value
@@ -35,5 +35,6 @@ function Meta(meta)
   for name, value in pairs(variables) do
     meta[name] = value
   end
+
   return meta
 end

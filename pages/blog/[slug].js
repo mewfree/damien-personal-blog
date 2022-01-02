@@ -48,7 +48,7 @@ export default function Post({ content, excerpt, frontmatter }) {
         <h1 className="text-3xl font-bold text-center">{frontmatter.title}</h1>
         <div className="text-center">written on {frontmatter.date}</div>
       </div>
-      <article className="prose prose-sm prose-indigo dark:prose-dark max-w-none">
+      <article className="prose prose-indigo dark:prose-dark max-w-none">
         <ReactMarkdown
           escapeHtml={false}
           source={content}

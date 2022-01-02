@@ -1,0 +1,20 @@
+#+title: Article Toast
+#+date: 2022-01-01
+#+tags: waffle,toast
+
+* Introduction
+Just a simple article
+
+* Trying out =org-mode=
+This should work with my workflow!
+
+#+begin_src haskell :results verbatim :exports both
+double x = x*2
+map double [1,2,3]
+#+end_src
+
+#+RESULTS:
+: [2,4,6]
+
+* Conclusion
+There you go!

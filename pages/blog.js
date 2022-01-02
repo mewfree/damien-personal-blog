@@ -38,7 +38,7 @@ export default function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-  const files = fs.readdirSync(`${process.cwd()}/content/posts`);
+  const files = fs.readdirSync(`${process.cwd()}/content/posts`).filter(file => file.endsWith(".md"));
 
   const posts = files.map((filename) => {
     const markdownWithMetadata = fs

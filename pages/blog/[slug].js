@@ -72,7 +72,7 @@ export default function Post({ content, excerpt, frontmatter }) {
 }
 
 export async function getStaticPaths() {
-  const files = fs.readdirSync("content/posts");
+  const files = fs.readdirSync("content/posts").filter(file => file.endsWith(".md"));
 
   const paths = files.map((filename) => ({
     params: {

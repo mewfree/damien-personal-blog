@@ -1,0 +1,14 @@
+#+title: README
+
+* Posts
+Posts are generated from Markdown (+ Front Matter (=yaml=)).
+
+Posts can be written in =org-mode= and converted to =.md= using =pandoc=:
+#+begin_src bash
+pandoc -s drafts/toast.org -o drafts/toast.md --lua-filter filter.lua
+#+end_src
+
+Prepend the command with =watch= for auto-reload.
+#+begin_src bash
+watch pandoc -s drafts/toast.org -o drafts/toast.md --lua-filter filter.lua
+#+end_src

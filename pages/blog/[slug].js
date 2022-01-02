@@ -10,30 +10,6 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import Layout from "../../components/layout";
 import MailchimpForm from "../../components/MailchimpForm";
 
-const InlineCodeBlock = ({ value }) => {
-  return (
-    <SyntaxHighlighter
-      language="javascript"
-      PreTag="span"
-      customStyle={{
-        display: undefined,
-        padding: undefined,
-      }}
-      wrapLongLines={true}>
-      {value}
-    </SyntaxHighlighter>
-  );
-};
-
-const CodeBlock = ({ language, value }) => {
-  return (
-    <SyntaxHighlighter
-      language={language}>
-      {value}
-    </SyntaxHighlighter>
-  );
-};
-
 export default function Post({ content, excerpt, frontmatter }) {
   return (
     <Layout>
@@ -49,11 +25,34 @@ export default function Post({ content, excerpt, frontmatter }) {
         <div className="text-center">written on {frontmatter.date}</div>
       </div>
       <article className="prose prose-indigo dark:prose-dark max-w-none">
-        <ReactMarkdown
-          escapeHtml={false}
-          source={content}
-          renderers={{ inlineCode: InlineCodeBlock, code: CodeBlock }}
-        />
+        <ReactMarkdown components={{
+          code({node, inline, className, children, ...props}) {
+            const match = /language-(\w+)/.exec(className || '')
+            return !inline && match ? (
+              <SyntaxHighlighter
+                language={match[1]}
+                {...props}
+              >
+                {String(children).replace(/\n$/, '')}
+              </SyntaxHighlighter>
+            ) : (
+              <SyntaxHighlighter
+                language="javascript"
+                PreTag="span"
+                customStyle={{
+                  display: undefined,
+                  padding: undefined,
+                }}
+                wrapLongLines={true}
+                {...props}
+              >
+                {children}
+              </SyntaxHighlighter>
+            )
+          }
+        }}>
+          {content}
+        </ReactMarkdown>
       </article>
       <footer className="mt-48">
         <div className="text-center"><MailchimpForm /></div>
